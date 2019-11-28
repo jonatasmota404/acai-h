@@ -3,4 +3,5 @@
 
 CMakeFiles/acai_h.dir/main.c.o: ../despesas.h
 CMakeFiles/acai_h.dir/main.c.o: ../main.c
+CMakeFiles/acai_h.dir/main.c.o: ../menu.h
 

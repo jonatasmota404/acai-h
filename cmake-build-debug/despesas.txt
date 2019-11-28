@@ -1,0 +1,8 @@
+agua
+100.00
+energia
+450.00
+aluguel
+950.00
+internet
+100.00

@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include "despesas.h"
+#include "menu.h"
 
-int main() {
-    cadastra_despesa();
-    return 0;
+void main() {
+    menu();
 }
