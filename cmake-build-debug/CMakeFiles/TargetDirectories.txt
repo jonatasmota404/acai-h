@@ -1,0 +1,3 @@
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/cmake-build-debug/CMakeFiles/acai_h.dir
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/cmake-build-debug/CMakeFiles/edit_cache.dir

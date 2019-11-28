@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/despesas.h
+stdio.h
+-
+stdlib.h
+-
+
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/main.c
+stdio.h
+-
+despesas.h
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/despesas.h
+
