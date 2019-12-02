@@ -13,10 +13,25 @@ typedef struct{
        FILE *arquivo_despesa;
        despesa *custo;
        int i = 0;
+       int k = 0;
        int opcao = 1;
        custo = (despesa*)malloc((i+1)*sizeof(despesa));
+       arquivo_despesa = fopen("despesas.txt","rb");
+        if(arquivo_despesa != NULL){
+            while (fread(&custo[k], sizeof(custo[k]), 1,arquivo_despesa)){
+                printf("qualquer coisa\n");
+                custo =(despesa*)realloc(custo,(k+2)*sizeof(despesa));
+                printf("outra coisa\n");
+                printf("%s\n",custo[k].nome_despesa);
+                printf("%f\n",custo[k].valor_despesa);
+                k++;
+            }
+        }
+
+
        while (opcao != 0){
-           custo = realloc(custo,(i+1)*sizeof(despesa));
+           custo = (despesa*)realloc(custo,(i+1)*sizeof(despesa));
+
            printf("Digite o nome da despesa\n");
            scanf("%s",custo[i].nome_despesa);
 
@@ -31,12 +46,11 @@ typedef struct{
        }
 
        if (opcao == 0){
-           arquivo_despesa = fopen("despesas.txt","w");
+           arquivo_despesa = fopen("despesas.txt","wb");
            for (int j = 0; j < i ; j++) {
                printf("%s\n", custo[j].nome_despesa);
                printf("%.2f\n", custo[j].valor_despesa);
-               fprintf(arquivo_despesa,"%s\n",custo[j].nome_despesa);
-               fprintf(arquivo_despesa,"%.2f\n",custo[j].valor_despesa);
+               fwrite(&custo[j], sizeof(custo[j]), 1,arquivo_despesa);
            }
        }
    }
