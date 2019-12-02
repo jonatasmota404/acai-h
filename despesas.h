@@ -17,16 +17,11 @@ typedef struct{
        int opcao = 1;
        custo = (despesa*)malloc((i+1)*sizeof(despesa));
        arquivo_despesa = fopen("despesas.txt","rb");
-        if(arquivo_despesa != NULL){
+
             while (fread(&custo[k], sizeof(custo[k]), 1,arquivo_despesa)){
-                printf("qualquer coisa\n");
                 custo =(despesa*)realloc(custo,(k+2)*sizeof(despesa));
-                printf("outra coisa\n");
-                printf("%s\n",custo[k].nome_despesa);
-                printf("%f\n",custo[k].valor_despesa);
                 k++;
             }
-        }
 
 
        while (opcao != 0){
