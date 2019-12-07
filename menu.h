@@ -23,6 +23,9 @@
          default:
              printf("opcao invalida");
              break;
+         case 0
+			exit(0);
+			break;
      }
 };
 

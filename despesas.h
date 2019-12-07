@@ -4,10 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "estoque.h"
 
 typedef struct{
     char nome_despesa[50];
-    float valor_despesa;
+    float valor_despesa = 0;
 }despesa;
 
 void cadastra_despesa(){
@@ -26,6 +27,7 @@ void cadastra_despesa(){
             scanf("%s", custo[i].nome_despesa);
             printf("Digite o valor da despesa\n");
             scanf("%f", &custo[i].valor_despesa);
+            
             printf("Digite 1 para continuar o cadastramento\n");
             printf("Digite 0 para voltar ao menu principal\n");
             scanf("%d", &opcao);
