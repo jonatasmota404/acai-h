@@ -17,13 +17,11 @@
          case 2:
              cadastra_produto();
              break;
-         default:
-             printf("opcao invalida");
-             break;
          case 0
 			exit(0);
 			break;
+		default:
+            printf("opcao invalida");
+            break;
      }
 };
-
-
