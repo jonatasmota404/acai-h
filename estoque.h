@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "despesas.h"
 
 typedef struct{
 	char nome_produto[30];
@@ -12,13 +11,13 @@ typedef struct{
 typedef struct{
 	int quantidade_acai_trezentos, quantidade_acai_quinhentos;	
 	float valor_compra;
-	float preco_acai_trezentos = 8; 
-	float preco_acai_quinhentos = 13;
+	float preco_acai_trezentos;
+	float preco_acai_quinhentos;
 }venda;
 
 typedef struct{
-	int acompanhamento_um
-	int acompanhamento_dois
+	int acompanhamento_um;
+	int acompanhamento_dois;
 	int acompanhamento_tres;
 }acompanhamentos;
 
@@ -31,13 +30,13 @@ despesa *produtos_add;
 produtos_add = (despesa*)malloc((adicoes_estoque+1)*sizeof(despesa));
 
 void cadastra_produto(){
-	int opcao=1;
-	
+	int opcao = 1;
+
 	prod = (produto*)malloc((quantidade_de_prod+1)*sizeof(produto));
 	
 	while(opcao != 0){
 		prod = (produto*)realloc(prod(quantidade_de_prod+1)*sizeof(produto));
-		produtos_add = (despesa*)realloc(produtos_add(adicoes_estoque+2)*sizeof(despesa));
+		produtos_add = (produto*)realloc(produtos_add(adicoes_estoque+2)*sizeof(despesa));
 		
 		printf("Insira o nome do produto: \n");
 		scanf("%s", prod[quantidade_de_prod].nome_produto);

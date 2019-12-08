@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "estoque.h"
 
 typedef struct{
     char nome_despesa[50];
-    float valor_despesa = 0;
+    float valor_despesa;
 }despesa;
 
 void cadastra_despesa(){
@@ -78,29 +77,6 @@ void pesquisa_nome(){
             if (strcmp(nome, custo[i].nome_despesa) == 0){
                 printf("Nome: %s\n",custo[i].nome_despesa);
                 printf("Valor: %f\n",custo[i].valor_despesa);
-            }
-            i++;
-        }
-        fclose(arquivo_despesa);
-    }
-}
-
-void deleta_item() {
-    FILE *arquivo_despesa;
-    despesa *custo;
-    char nome[50];
-    int i = 0;
-    arquivo_despesa = fopen("despesas.txt", "wb");
-    custo = (despesa *) malloc(sizeof(despesa));
-    if (arquivo_despesa == NULL) {
-        printf("erro na abertura do arquivo\n");
-    } else {
-        printf("Digite o nome da despesa que deseja\n");
-        scanf("%s", nome);
-        while (fread(&custo[i], sizeof(despesa), 1, arquivo_despesa) == 1) {
-            if (strcmp(nome, custo[i].nome_despesa) == 0) {
-                //custo[i].nome_despesa = '\0';
-                //custo[i].valor_despesa = 0;
             }
             i++;
         }
