@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "estoque.h"
 
 typedef struct{
     char nome_despesa[50];
-    float valor_despesa = 0;
+    float valor_despesa;
 }despesa;
 
 void cadastra_despesa(){
