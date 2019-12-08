@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "despesas.h"
 
 typedef struct{
 	char nome_produto[30];
@@ -25,6 +24,14 @@ typedef struct{
 	float valor_despesas_estoque;
 }despesas_estoque;
 
+//protótipo das funções
+void cadastra_produto();
+void adicionar_no_estoque();
+void vender();
+void exibir_estoque();
+void cardapio();
+
+//variáveis globais
 float preco_acai_trezentos = 8; 
 float preco_acai_quinhentos = 13;
 int quantidade_de_prod=0;
@@ -32,7 +39,7 @@ int adicoes_estoque=0;
 int quantidade_de_vendas=0;
 produto *prod;
 despesas_estoque *produtos_add;
-produtos_add = (despesa*)malloc((adicoes_estoque+1)*sizeof(despesa));
+produtos_add = (despesas_estoque*)malloc((adicoes_estoque+1)*sizeof(despesas_estoque));
 
 void cadastra_produto(){
 	int opcao=1;
@@ -40,8 +47,8 @@ void cadastra_produto(){
 	prod = (produto*)malloc((quantidade_de_prod+1)*sizeof(produto));
 	
 	while(opcao != 0){
-		prod = (produto*)realloc(prod(quantidade_de_prod+1)*sizeof(produto));
-		produtos_add = (despesa*)realloc(produtos_add(adicoes_estoque+2)*sizeof(despesa));
+		prod = (produto*)realloc(prod,(quantidade_de_prod+1)*sizeof(produto));
+		produtos_add = (despesas_estoque*)realloc(produtos_add,(adicoes_estoque+2)*sizeof(despesas_estoque));
 		
 		printf("Insira o nome do produto: \n");
 		scanf("%s", prod[quantidade_de_prod].nome_produto);
@@ -60,9 +67,9 @@ void cadastra_produto(){
 		printf("Produto cadastrado com sucesso!");
 		
 		printf("Agora registre a despesa. Insira o nome da despesa: ");
-		scanf("%s", produtos_add[adicoes_estoque].nome_despesa);
+		scanf("%s", produtos_add[adicoes_estoque].nome_despesa_estoque);
 		
-		produtos_add[adicoes_estoque].valor_despesa += prod[quantidade_de_prod].preco_produto * prod[quantidade_de_prod].quantidade_produto;
+		produtos_add[adicoes_estoque].valor_despesa_estoque += prod[quantidade_de_prod].preco_produto * prod[quantidade_de_prod].quantidade_produto;
 		
 		
 		printf("Digite 1 para continuar o cadastramento\n");
@@ -81,7 +88,7 @@ void adicionar_no_estoque(){
 	float quantidade_alterar;
 	
 	while(opcao!=0){
-		produtos_add = (despesa*)realloc(produtos_add(adicoes_estoque+2)*sizeof(despesa));
+		produtos_add = (despesa*)realloc,(produtos_add(adicoes_estoque+2)*sizeof(despesa));
 		
 		printf("Qual o id do produto que terá sua quantidade acrescentada? \n");
 		scanf("%d", &alterar);
@@ -91,8 +98,8 @@ void adicionar_no_estoque(){
 		prod[alterar].quantidade_produto = prod[alterar].quantidade_produto + quantidade_alterar;
 		
 		printf("Adicione um nome a despesa da compra: \n");
-		scanf("%s", produtos_add[adicoes_estoque].nome_despesa);
-		produtos_add[adicoes_estoque].valor_despesa += prod[alterar].preco_produto * quantidade_alterar;
+		scanf("%s", produtos_add[adicoes_estoque].nome_despesa_estoque);
+		produtos_add[adicoes_estoque].valor_despesa_estoque += prod[alterar].preco_produto * quantidade_alterar;
 		
 		printf("Produto alterado com sucesso!\n");
 		
@@ -114,6 +121,9 @@ void vender(){
 	guarnicao = (acompanhamentos*)malloc((quantidade_de_vendas+1)*sizeof(acompanhamentos));
 	
 	while(opcao!=0){
+		vender = (venda*)realloc(vender,(quantidade_de_vendas+2)*sizeof(venda));
+		guarnicao = (acompanhamentos*)realloc(guarnicao,(quantidade_de_vendas+2)*sizeof(acompanhamentos));
+		
 		printf("Insira a quantidade de açaís de 300ml a ser vendidos: \n");
 		scanf("%d", &vender[quantidade_de_vendas].quantidade_acai_trezentos);
 		printf("Insira a quantidade de açaís de 300ml a ser vendidos: \n");
