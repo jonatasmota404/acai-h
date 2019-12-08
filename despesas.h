@@ -38,6 +38,7 @@ void cadastra_despesa(){
                 printf("%s\n", custo[j].nome_despesa);
                 printf("%f\n", custo[j].valor_despesa);
             }
+            printf("Cadastrado com sucesso\n");
         }
     }
 }
@@ -86,7 +87,7 @@ void pesquisa_nome(){
     }
 }
 
-void deleta_item() {
+/*void deleta_item() {
     FILE *arquivo_despesa;
     despesa *custo;
     char nome[50];
@@ -108,3 +109,4 @@ void deleta_item() {
         fclose(arquivo_despesa);
     }
 }
+*/
