@@ -42,7 +42,7 @@ void menu_despesa(){
              menu_despesa();
              break;
          case 2:
-             //cadastra_produto();
+             /*cadastra_produto();*/
              break;
          default:
              printf("opcao invalida");
