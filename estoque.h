@@ -12,22 +12,26 @@ typedef struct{
 typedef struct{
 	int quantidade_acai_trezentos, quantidade_acai_quinhentos;	
 	float valor_compra;
-	float preco_acai_trezentos = 8; 
-	float preco_acai_quinhentos = 13;
 }venda;
 
 typedef struct{
-	int acompanhamento_um
-	int acompanhamento_dois
+	int acompanhamento_um;
+	int acompanhamento_dois;
 	int acompanhamento_tres;
 }acompanhamentos;
 
+typedef struct{
+	char nome_despesas_estoque[50];
+	float valor_despesas_estoque;
+}despesas_estoque;
 
+float preco_acai_trezentos = 8; 
+float preco_acai_quinhentos = 13;
 int quantidade_de_prod=0;
 int adicoes_estoque=0;
-int quantidade_de_vendas=0;;
+int quantidade_de_vendas=0;
 produto *prod;
-despesa *produtos_add;
+despesas_estoque *produtos_add;
 produtos_add = (despesa*)malloc((adicoes_estoque+1)*sizeof(despesa));
 
 void cadastra_produto(){
