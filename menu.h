@@ -1,6 +1,3 @@
-//
-// Created by jjuni on 28/11/2019.
-//
 #include <stdio.h>
 #include <stdlib.h>
 #include "despesas.h"
@@ -23,6 +20,9 @@
          default:
              printf("opcao invalida");
              break;
+         case 0
+			exit(0);
+			break;
      }
 };
 
