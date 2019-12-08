@@ -15,6 +15,12 @@ string.h
 -
 
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/estoque.h
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
 
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/main.c
 menu.h

@@ -1,6 +1,3 @@
-//
-// Created by jjuni on 20/11/2019.
-//
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,10 +19,12 @@ void cadastra_despesa(){
     } else {
         while (opcao != 0) {
             custo = (despesa *) realloc(custo, (i + 2) * sizeof(despesa));
+
             printf("Digite o nome da despesa\n");
             scanf("%s", custo[i].nome_despesa);
             printf("Digite o valor da despesa\n");
             scanf("%f", &custo[i].valor_despesa);
+            
             printf("Digite 1 para continuar o cadastramento\n");
             printf("Digite 0 para voltar ao menu principal\n");
             scanf("%d", &opcao);
@@ -108,5 +107,5 @@ void pesquisa_nome(){
         }
         fclose(arquivo_despesa);
     }
-}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+}
 */
