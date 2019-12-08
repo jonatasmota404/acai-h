@@ -26,8 +26,8 @@ int quantidade_de_prod=0;
 int adicoes_estoque=0;
 int quantidade_de_vendas=0;;
 produto *prod;
-despesa *produtos_add;
-produtos_add = (despesa*)malloc((adicoes_estoque+1)*sizeof(despesa));
+produto *produtos_add;
+produtos_add = (produto*)malloc((adicoes_estoque+1)*sizeof(despesa));
 
 void cadastra_produto(){
 	int opcao = 1;
@@ -35,8 +35,8 @@ void cadastra_produto(){
 	prod = (produto*)malloc((quantidade_de_prod+1)*sizeof(produto));
 	
 	while(opcao != 0){
-		prod = (produto*)realloc(prod(quantidade_de_prod+1)*sizeof(produto));
-		produtos_add = (produto*)realloc(produtos_add(adicoes_estoque+2)*sizeof(despesa));
+		prod = (produto*)realloc(prod,(quantidade_de_prod+1)*sizeof(produto));
+		produtos_add = (produto*)realloc(produtos_add,(adicoes_estoque+2)*sizeof(despesa));
 		
 		printf("Insira o nome do produto: \n");
 		scanf("%s", prod[quantidade_de_prod].nome_produto);
