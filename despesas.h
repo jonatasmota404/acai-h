@@ -19,6 +19,7 @@ void cadastra_despesa(){
     } else {
         while (opcao != 0) {
             custo = (despesa *) realloc(custo, (i + 2) * sizeof(despesa));
+
             printf("Digite o nome da despesa\n");
             scanf("%s", custo[i].nome_despesa);
             printf("Digite o valor da despesa\n");
