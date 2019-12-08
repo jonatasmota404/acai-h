@@ -22,6 +22,14 @@ stdlib.h
 math.h
 -
 
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/funcionario.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/main.c
 menu.h
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/menu.h
@@ -35,4 +43,6 @@ despesas.h
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/despesas.h
 estoque.h
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/estoque.h
+funcionario.h
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/funcionario.h
 

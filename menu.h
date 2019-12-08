@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "despesas.h"
 #include "estoque.h"
+#include "funcionario.h"
 
 void menu_despesa(){
     int opcao;
@@ -16,10 +17,10 @@ void menu_despesa(){
             cadastra_despesa();
             break;
         case 2:
-            ler_arquivo();
+            ler_arquivo_despesa();
             break;
         case 3:
-            pesquisa_nome();
+            pesquisa_nome_despesa();
             break;
         default:
             printf("opcao invalida");
@@ -50,6 +51,30 @@ void menu_compra_venda(){
 
 }
 
+void menu_funcionario(){
+    int opcao;
+    printf("****************MENU FUNCIONARIOS****************\n");
+    printf("Selecione uma das opções a baixo:\n");
+    printf("1 - cadastra funcionario\n");
+    printf("2 - lista funcionarios\n");
+    printf("3 - pesquisa o funcionario\n");
+    scanf("%d",&opcao);
+    switch(opcao){
+        case 1:
+            cadastro_funcionario();
+            break;
+        case 2:
+            ler_arquivo_funcionario();
+            break;
+        case 3:
+            pesquisa_nome_funcionario();
+            break;
+        default:
+            printf("opcao invalida");
+            break;
+    }
+}
+
  void menu() {
     int opcao;
     int true = 1;
@@ -57,8 +82,9 @@ void menu_compra_venda(){
         printf("****************MENU PRINCIPAL****************\n");
         printf("Selecione uma das opções a baixo:\n");
         printf("0 - para sair\n");
-        printf("1 - para ir ao menu das despesas\n");
-        printf("2 - cadastrar novos produtos no estoque\n");
+        printf("1 - menu despesas\n");
+        printf("2 - menu estoque\n");
+        printf("3 - menu funcionarios\n");
         scanf("%d", &opcao);
         switch (opcao) {
             case 0:
@@ -70,6 +96,9 @@ void menu_compra_venda(){
                 break;
             case 2:
                 menu_estoque();
+                break;
+            case 3:
+                menu_funcionario();
                 break;
             default:
                 printf("opcao invalida");
