@@ -37,6 +37,7 @@ float preco_acai_quinhentos = 13;
 int quantidade_de_prod;
 int adicoes_estoque;
 int quantidade_de_vendas;
+int acompanhamento_um, acompanhamento_dois, acompanhamento_tres;
 produto *prod;
 //despesas_estoque *produtos_add;
 
@@ -133,26 +134,34 @@ void vender(){
         if(&vender[quantidade_de_vendas].quantidade_acai_trezentos>0){
             for(i=0; i<vender[quantidade_de_vendas].quantidade_acai_trezentos; i++){
                 printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
-                scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_um);
+                scanf("%d", &acompanhamento_um);
                 printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
-                scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_dois);
+                scanf("%d", &acompanhamento_dois);
                 printf("Selecione a cobertura do açaí de 500ml número %d: (pelo ID)\n", i);
-                scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_tres);
+                scanf("%d", &acompanhamento_tres);
+                
+                prod[acompanhamento_um].quantidade_produto = prod[acompanhamento_um].quantidade_produto - 1; 
+                prod[acompanhamento_dois].quantidade_produto = prod[acompanhamento_dois].quantidade_produto - 1;
+                prod[acompanhamento_tres].quantidade_produto = prod[acompanhamento_tres].quantidade_produto - 1;
             }
         }
         if(&vender[quantidade_de_vendas].quantidade_acai_quinhentos>0){
             for(i=0; i<vender[quantidade_de_vendas].quantidade_acai_quinhentos; i++){
                 printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
-                scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_um);
+                scanf("%d", &acompanhamento_um);
                 printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
-                scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_dois);
+                scanf("%d", &acompanhamento_dois);
                 printf("Selecione a cobertura do açaí de 500ml número %d: (pelo ID)\n", i);
-                scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_tres);
+                scanf("%d", &acompanhamento_tres);
+                
+                prod[acompanhamento_um].quantidade_produto = prod[acompanhamento_um].quantidade_produto - 1; 
+                prod[acompanhamento_dois].quantidade_produto = prod[acompanhamento_dois].quantidade_produto - 1;
+                prod[acompanhamento_tres].quantidade_produto = prod[acompanhamento_tres].quantidade_produto - 1;
             }
         }
 
-        //vender[quantidade_de_vendas].valor_compra = (vender[quantidade_de_vendas].quantidade_acai_trezentos * vender.preco_acai_trezentos) + (vender[quantidade_de_vendas].quantidade_acai_quinhentos * vender.preco_acai_quinhentos);
-
+        vender[quantidade_de_vendas].valor_compra -> ((vender[quantidade_de_vendas].quantidade_acai_trezentos * vender.preco_acai_trezentos) + (vender[quantidade_de_vendas].quantidade_acai_quinhentos * vender.preco_acai_quinhentos));
+		
         printf("Digite 1 para realizar outra venda\n");
         printf("Digite 0 para voltar ao menu principal\n");
         scanf("%d",&opcao);
@@ -181,4 +190,3 @@ void cardapio(){
         }
     }
 }
-
