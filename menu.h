@@ -11,6 +11,7 @@ void menu_despesa(){
     printf("1 - cadastrar novas despesas\n");
     printf("2 - visualizar as despesas\n");
     printf("3 - pesquisar por nome\n");
+    printf("4 - deleta despesa\n");
     scanf("%d",&opcao);
     switch(opcao){
         case 1:
@@ -21,6 +22,9 @@ void menu_despesa(){
             break;
         case 3:
             pesquisa_nome_despesa();
+            break;
+        case 4:
+            deleta_item();
             break;
         default:
             printf("opcao invalida");
