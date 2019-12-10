@@ -42,6 +42,7 @@ void menu_despesa(){
 void menu_funcionario(){
     int opcao;
     int true = 1;
+    while (true != 0) {
     printf("****************MENU FUNCIONARIOS****************\n");
     printf("Selecione uma das opções a baixo:\n");
     printf("0 - para voltar ao menu principal\n");
@@ -49,7 +50,6 @@ void menu_funcionario(){
     printf("2 - lista funcionarios\n");
     printf("3 - pesquisa o funcionario\n");
     scanf("%d",&opcao);
-    while (true != 0) {
         switch (opcao) {
             case 0:
                 true = 0;
@@ -73,6 +73,7 @@ void menu_funcionario(){
  void menu_estoque(){
     int opcao;
     int true = 1;
+     while (true != 0) {
     printf("****************MENU ESTOQUE****************\n");
     printf("Selecione uma das opções a baixo:\n");
     printf("0 - para voltar ao menu principal\n");
@@ -81,7 +82,6 @@ void menu_funcionario(){
     printf("3 - adiciona estoque\n");
     printf("4 - exibe estoque\n");
     scanf("%d",&opcao);
-     while (true != 0) {
          switch (opcao) {
              case 0:
                  true = 0;
