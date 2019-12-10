@@ -3,4 +3,4 @@ project(acai_h C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(acai_h main.c despesas.h menu.h estoque.h funcionario.h)
+add_executable(acai_h main.c despesas.h menu.h estoque.h funcionario.h fluxo-de-caixa.h)

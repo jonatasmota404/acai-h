@@ -41,7 +41,11 @@ adicionados *add;
 acompanhamentos *guarnicao;
 
 void cadastra_produto(){
+<<<<<<< HEAD
 	produto *prod;
+=======
+    produto *prod;
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
     int opcao = 1;
     int quantidade_de_prod=0;
     adicoes_estoque = 0;
@@ -55,7 +59,11 @@ void cadastra_produto(){
 
         printf("Insira o nome do produto: \n");
         scanf("%s", prod[quantidade_de_prod].nome_produto);
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
         for(int j=0; j<quantidade_de_prod;j++){
             int retorno;
             retorno = strcmp(prod[j].nome_produto, prod[quantidade_de_prod].nome_produto);
@@ -70,18 +78,31 @@ void cadastra_produto(){
         printf("Insira a quantidade do produto: \n");
         scanf("%f", &prod[quantidade_de_prod].quantidade_produto);
         printf("Produto cadastrado com sucesso! \n");
+<<<<<<< HEAD
+=======
 
-		add[adicoes_estoque].valor_unit = prod[quantidade_de_prod].preco_produto;
-		add[adicoes_estoque].quantidade_add = prod[quantidade_de_prod].quantidade_produto;
-	
+        add[adicoes_estoque].valor_unit = prod[quantidade_de_prod].preco_produto;
+        add[adicoes_estoque].quantidade_add = prod[quantidade_de_prod].quantidade_produto;
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
+
         printf("Digite 1 para continuar o cadastramento\n");
         printf("Digite 0 para voltar ao menu principal\n");
         scanf("%d",&opcao);
+<<<<<<< HEAD
+=======
+
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
         fwrite(&prod[quantidade_de_prod], sizeof(prod[quantidade_de_prod]), 1, arquivo_estoque);
         quantidade_de_prod++;
         adicoes_estoque++;
     }
+<<<<<<< HEAD
     fclose(arquivo_estoque);
+=======
+    if (opcao == 0){
+        fclose(arquivo_estoque);
+    }
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
 }
 
 void adicionar_no_estoque(){
@@ -97,6 +118,7 @@ void adicionar_no_estoque(){
     FILE *arquivo_estoque;
     arquivo_compra = fopen("compra.txt", "ab");
     arquivo_estoque = fopen("estoque.txt", "rb");
+<<<<<<< HEAD
 
     if (arquivo_estoque == NULL){
         printf("erro de abertura\n");
@@ -113,6 +135,24 @@ void adicionar_no_estoque(){
             }else{
                 add = (adicionados*)realloc(add,(adicoes_estoque+1)*sizeof(adicionados));
 
+=======
+
+    if (arquivo_estoque == NULL){
+        printf("erro de abertura\n");
+    }else{
+        while (fread(&prod[k], sizeof(prod[k]), 1, arquivo_estoque) == 1) {
+            prod = (produto*) realloc(prod, (k + 2) * sizeof(produto));
+            k++;
+        }
+        fclose(arquivo_estoque);
+
+        while(opcao!=0){
+            if(arquivo_estoque == NULL){
+                printf("Estoque vazio! Impossível adicionar");
+            }else{
+                add = (adicionados*)realloc(add,(adicoes_estoque+1)*sizeof(adicionados));
+
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
                 exibir_estoque();
 
                 printf("Id do produto que terá sua quantidade acrescentada: \n");
@@ -136,7 +176,11 @@ void adicionar_no_estoque(){
         }
         fclose(arquivo_compra);
         arquivo_estoque = fopen("estoque.txt", "wb");
+<<<<<<< HEAD
         for(int i = 0; i < k; i++){	
+=======
+        for(int i = 0; i < k; i++){
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
             fwrite(&prod[i], sizeof(prod[i]), 1, arquivo_estoque);
         }
         fclose(arquivo_estoque);
@@ -144,16 +188,28 @@ void adicionar_no_estoque(){
 }
 	
 void vender(){
+<<<<<<< HEAD
 	produto *prod;
 	int quantidade_de_vendas=0;
+=======
+    produto *prod;
+    int quantidade_de_vendas=0;
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
     int opcao = 1;
     int i = 0;
     int k;
     venda *vende;
+<<<<<<< HEAD
     
     vende = (venda*)malloc((quantidade_de_vendas+1)*sizeof(venda));
     prod = (produto*)malloc((1)*sizeof(produto));
     
+=======
+
+    vende = (venda*)malloc((quantidade_de_vendas+1)*sizeof(venda));
+    prod = (produto*)malloc((1)*sizeof(produto));
+
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
     FILE *arquivo_venda;
     FILE *arquivo_estoque;
     arquivo_venda = fopen("venda.txt","ab");
@@ -164,6 +220,7 @@ void vender(){
         while (fread(&prod[k], sizeof(prod[k]), 1, arquivo_estoque) == 1) {
             prod = (produto*) realloc(prod, (k + 2) * sizeof(produto));
             k++;
+<<<<<<< HEAD
     }
     
     fclose(arquivo_estoque);
@@ -241,11 +298,99 @@ void exibir_estoque(){
 	prod = (produto*)malloc((quantidade_de_prod+1)*sizeof(produto));
 	
 	if (arquivo_estoque == NULL){
+=======
+        }
+
+        fclose(arquivo_estoque);
+        guarnicao = (acompanhamentos*)malloc((quantidade_de_vendas+1)*sizeof(acompanhamentos));
+
+        while(opcao!=0){
+
+            vende = (venda*)realloc(vende,(quantidade_de_vendas+1)*sizeof(venda));
+            guarnicao = (acompanhamentos*)realloc(guarnicao,(quantidade_de_vendas+1)*sizeof(acompanhamentos));
+            if(arquivo_estoque==NULL){
+                printf("Estoque vazio, não há nada para vender!");
+            }else{
+                printf("Insira a quantidade de açaís de 300ml a ser vendidos: \n");
+                scanf("%f", &vende[quantidade_de_vendas].quantidade_acai_trezentos);
+                printf("Insira a quantidade de açaís de 500ml a ser vendidos: \n");
+                scanf("%f", &vende[quantidade_de_vendas].quantidade_acai_quinhentos);
+
+//cardapio();
+
+                if(&vende[quantidade_de_vendas].quantidade_acai_trezentos > 0){
+                    for(i = 0; i < vende[quantidade_de_vendas].quantidade_acai_trezentos; i++){
+                        printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
+                        scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_um);
+                        printf("Selecione o segundo acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
+                        scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_dois);
+                        printf("Selecione a cobertura do açaí de 300ml número %d: (pelo ID)\n", i);
+                        scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_tres);
+
+                        prod[acompanhamento_um].quantidade_produto = prod[acompanhamento_um].quantidade_produto - 1;
+                        prod[acompanhamento_dois].quantidade_produto = prod[acompanhamento_dois].quantidade_produto - 1;
+                        prod[acompanhamento_tres].quantidade_produto = prod[acompanhamento_tres].quantidade_produto - 1;
+
+                    }
+                }
+                if(&vende[quantidade_de_vendas].quantidade_acai_quinhentos>0){
+                    for(i=0; i<vende[quantidade_de_vendas].quantidade_acai_quinhentos; i++){
+                        printf("Selecione o primeiro acompanhamento do açaí de 500ml número %d: (pelo ID)\n", i);
+                        scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_um);
+                        printf("Selecione o segundo acompanhamento do açaí de 500ml número %d: (pelo ID)\n", i);
+                        scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_dois);
+                        printf("Selecione a cobertura do açaí de 500ml número %d: (pelo ID)\n", i);
+                        scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_tres);
+
+                        prod[acompanhamento_um].quantidade_produto = prod[acompanhamento_um].quantidade_produto - 1;
+                        prod[acompanhamento_dois].quantidade_produto = prod[acompanhamento_dois].quantidade_produto - 1;
+                        prod[acompanhamento_tres].quantidade_produto = prod[acompanhamento_tres].quantidade_produto - 1;
+                    }
+                }
+                arquivo_estoque = fopen("estoque.txt","wb");
+                for(i=0; i < k; i++){
+                    fwrite(&prod[i], sizeof(prod[i]), 1, arquivo_estoque);
+                }
+                fclose(arquivo_estoque);
+
+                vende[quantidade_de_vendas].valor_compra = (((vende[quantidade_de_vendas].quantidade_acai_trezentos) * (preco_acai_trezentos)) + ((vende[quantidade_de_vendas].quantidade_acai_quinhentos) * (preco_acai_quinhentos)));
+
+                fwrite(&vende[quantidade_de_vendas], sizeof(vende[quantidade_de_vendas]), 1, arquivo_venda);
+
+                printf("Digite 1 para realizar outra venda\n");
+                printf("Digite 0 para voltar ao menu principal\n");
+                scanf("%d",&opcao);
+
+                quantidade_de_vendas++ ;
+            }
+        }
+    }
+}
+
+void exibir_estoque(){
+    produto *prod;
+    FILE *arquivo_estoque;
+    int k;
+    int quantidade_de_prod=0;
+    arquivo_estoque = fopen("estoque.txt","rb");
+    prod = (produto*)malloc((quantidade_de_prod+1)*sizeof(produto));
+
+    if (arquivo_estoque == NULL){
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
         printf("Erro de abertura\n");
     }else{
         while (fread(&prod[k], sizeof(prod[k]), 1, arquivo_estoque) == 1) {
             prod = (produto*) realloc(prod, (k + 2) * sizeof(produto));
             k++;
+<<<<<<< HEAD
+=======
+        }
+        fclose(arquivo_estoque);
+        for(int j=0; j<k; j++){
+            printf("ID %d | Produto: %s | Preco unitário: %.2f | Quantidade %.4f\n",
+                   j, prod[j].nome_produto, prod[j].preco_produto, prod[j].quantidade_produto);
+        }
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0
     }
 	fclose(arquivo_estoque);
 		for(int j=0; j<k; j++){
@@ -256,7 +401,14 @@ void exibir_estoque(){
 }
 
 /*void cardapio(){
+<<<<<<< HEAD
 	for(int j=0; j<quantidade_de_prod; j++){
 		printf("ID %d | Acompanhamento/Cobertura %s", j, prod[j].nome_produto);
 	}
 }*/
+=======
+for(int j=0; j<quantidade_de_prod; j++){
+printf("ID %d | Acompanhamento/Cobertura %s", j, prod[j].nome_produto);
+}
+}*/
+>>>>>>> beec9ad5a6965cae1b11cb00b7a5f74dc36525c0

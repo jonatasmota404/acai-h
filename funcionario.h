@@ -64,7 +64,6 @@ void cadastro_funcionario() {
     }
 }
 
-
 void ler_arquivo_funcionario(){
     funcionario *cadastro;
     FILE *arquivo_funcionario;

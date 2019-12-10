@@ -60,6 +60,7 @@ void ler_arquivo_despesa(){
     despesa *custo;
     FILE *arquivo_despesa;
     int i = 0;
+    int opcao = 1;
     custo = (despesa*)malloc(sizeof(despesa));
     arquivo_despesa = fopen("despesas.txt", "rb");
     if (arquivo_despesa == NULL){
@@ -70,11 +71,15 @@ void ler_arquivo_despesa(){
             i++;
         }
         fclose(arquivo_despesa);
-        for (int j = 0; j < i; ++j) {
-            printf("%s\n", custo[j].nome_despesa);
-            printf("%.2f\n", custo[j].valor_despesa);
-            printf("%d / %d / %d \n",custo[j].vencimento.dia,
-                   custo[j].vencimento.mes,custo[j].vencimento.ano);
+        while (opcao != 0) {
+            for (int j = 0; j < i; ++j) {
+                printf("%s\n", custo[j].nome_despesa);
+                printf("%.2f\n", custo[j].valor_despesa);
+                printf("%d / %d / %d \n", custo[j].vencimento.dia,
+                       custo[j].vencimento.mes, custo[j].vencimento.ano);
+            }
+            printf("Digite 0 para voltar ao menu estoque\n");
+            scanf("%d",&opcao);
         }
     }
 }
@@ -84,6 +89,7 @@ void pesquisa_nome_despesa(){
     despesa *custo;
     char nome[50];
     int i = 0;
+    int opcao = 1;
     arquivo_despesa = fopen("despesas.txt","rb");
     custo = (despesa*)malloc(sizeof(despesa));
     if(arquivo_despesa == NULL){
@@ -97,6 +103,11 @@ void pesquisa_nome_despesa(){
                 printf("Valor: %f\n",custo[i].valor_despesa);
                 printf("Vencimento: %d / %d / %d \n",custo[i].vencimento.dia,
                        custo[i].vencimento.mes,custo[i].vencimento.ano);
+                printf("Digite 0 para voltar ao menu despesa\n");
+                scanf("%d",&opcao);
+                if (opcao == 0){
+                    break;
+                }
             }
             i++;
         }
