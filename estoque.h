@@ -182,8 +182,6 @@ void vender(){
                 printf("Insira a quantidade de açaís de 500ml a ser vendidos: \n");
                 scanf("%f", &vende[quantidade_de_vendas].quantidade_acai_quinhentos);
 
-//cardapio();
-
                 if(&vende[quantidade_de_vendas].quantidade_acai_trezentos > 0){
                     for(i = 0; i < vende[quantidade_de_vendas].quantidade_acai_trezentos; i++){
                         printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
@@ -255,9 +253,3 @@ void exibir_estoque(){
         }
     }
 }
-
-/*void cardapio(){
-for(int j=0; j<quantidade_de_prod; j++){
-printf("ID %d | Acompanhamento/Cobertura %s", j, prod[j].nome_produto);
-}
-}*/
