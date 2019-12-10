@@ -82,9 +82,7 @@ void cadastra_produto(){
         quantidade_de_prod++;
         adicoes_estoque++;
     }
-    if (opcao == 0){
         fclose(arquivo_estoque);
-    }
 }
 
 void adicionar_no_estoque(){
