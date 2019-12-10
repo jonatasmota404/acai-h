@@ -108,7 +108,7 @@ void adicionar_no_estoque(){
         }
         fclose(arquivo_estoque);
 
-        while(opcao!=0){
+        while(opcao != 0){
             if(arquivo_estoque == NULL){
                 printf("Estoque vazio! Impossível adicionar");
             }else{
