@@ -28,25 +28,6 @@ void menu_despesa(){
     }
 }
 
-void menu_estoque(){
-    int opcao;
-    printf("****************MENU ESTOQUE****************\n");
-    printf("Selecione uma das opções a baixo:\n");
-    printf("1 - cadastrar novos produtos no estoque\n");
-    scanf("%d",&opcao);
-    switch(opcao){
-        case 1:
-            cadastra_produto();
-            break;
-        case 2:
-            //cadastra_produto();
-            break;
-        default:
-            printf("opcao invalida");
-            break;
-    }
-}
-
 void menu_compra_venda(){
 
 }
@@ -75,11 +56,39 @@ void menu_funcionario(){
     }
 }
 
- void menu() {
+ void menu_estoque(){
+    int opcao;
+    printf("****************MENU ESTOQUE****************\n");
+    printf("Selecione uma das opções a baixo:\n");
+    printf("1 - cadastrar novos produtos no estoque\n");
+    printf("2 - vender\n");
+    printf("3 - adiciona estoque\n");
+    printf("4 - exibe estoque\n");
+    scanf("%d",&opcao);
+    switch(opcao){
+        case 1:
+            cadastra_produto();
+            break;
+        case 2:
+            vender();
+            break;
+        case 3:
+            adicionar_no_estoque();
+            break;
+        case 4:
+            exibir_estoque();
+            break;
+        default:
+            printf("opcao invalida");
+            break;
+    }
+}
+
+void menu() {
     int opcao;
     int true = 1;
     while (true != 0) {
-        printf("****************MENU PRINCIPAL****************\n");
+        printf("***************MENU PRINCIPAL***************\n");
         printf("Selecione uma das opções a baixo:\n");
         printf("0 - para sair\n");
         printf("1 - menu despesas\n");
