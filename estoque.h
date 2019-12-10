@@ -77,11 +77,14 @@ void cadastra_produto(){
         printf("Digite 1 para continuar o cadastramento\n");
         printf("Digite 0 para voltar ao menu principal\n");
         scanf("%d",&opcao);
+
         fwrite(&prod[quantidade_de_prod], sizeof(prod[quantidade_de_prod]), 1, arquivo_estoque);
         quantidade_de_prod++;
         adicoes_estoque++;
     }
-    fclose(arquivo_estoque);
+    if (opcao == 0){
+        fclose(arquivo_estoque);
+    }
 }
 
 void adicionar_no_estoque(){
