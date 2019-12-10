@@ -41,7 +41,6 @@ int quantidade_de_vendas=0;
 int acompanhamento_um, acompanhamento_dois, acompanhamento_tres;
 produto *prod;
 adicionados *add;
-acompanhamentos *guarnicao;
 
 void cadastra_produto(){
     int opcao=1;
