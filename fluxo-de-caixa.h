@@ -39,6 +39,10 @@ float ler_despesa_funcionario(int mes){
     return valor_funcionario;
 }
 
+float ler_compra_venda(){
+
+}
+
 void fluxo_de_caixa(){
     int mes;
     float fluxo_do_mes;
