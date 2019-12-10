@@ -11,17 +11,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c1d5e70-74a2-42ac-819b-8ff97a6e516e" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/acai_h.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/acai_h.cbp" afterDir="false" />
-=======
+    <list default="true" id="e95e7104-d315-4f3a-9e1e-a484f4071a15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/acai_h.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/acai_h.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/despesas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/despesas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/despesas.h" beforeDir="false" afterPath="$PROJECT_DIR$/despesas.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque.h" beforeDir="false" afterPath="$PROJECT_DIR$/estoque.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.h" beforeDir="false" afterPath="$PROJECT_DIR$/menu.h" afterDir="false" />
->>>>>>> despesa
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +32,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1UFPE3fy7DF2f75mHcI1AONRbrE" />
+  <component name="ProjectId" id="1UksHrWRTVBpCvzdySY31uUhitk" />
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../stuct" />
-    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -68,20 +60,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1c1d5e70-74a2-42ac-819b-8ff97a6e516e" name="Default Changelist" comment="" />
-      <created>1574949254892</created>
+      <changelist id="e95e7104-d315-4f3a-9e1e-a484f4071a15" name="Default Changelist" comment="" />
+      <created>1575911843693</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574949254892</updated>
-      <workItem from="1574949256056" duration="4615000" />
-      <workItem from="1575054991533" duration="2512000" />
-      <workItem from="1575308018294" duration="2946000" />
-      <workItem from="1575493957403" duration="2757000" />
-      <workItem from="1575563929025" duration="4433000" />
-      <workItem from="1575568905612" duration="2263000" />
-      <workItem from="1575588812582" duration="627000" />
-      <workItem from="1575641163151" duration="12250000" />
-      <workItem from="1575718865955" duration="239000" />
+      <updated>1575911843693</updated>
+      <workItem from="1575911847495" duration="1939000" />
     </task>
     <servers />
   </component>

@@ -104,26 +104,35 @@ void pesquisa_nome_despesa(){
     }
 }
 
-/*void deleta_item() {
+void deleta_item() {
     FILE *arquivo_despesa;
     despesa *custo;
     char nome[50];
     int i = 0;
-    arquivo_despesa = fopen("despesas.txt", "wb");
+    int posicao_delete = 0;
+    arquivo_despesa = fopen("despesas.txt", "rb");
     custo = (despesa *) malloc(sizeof(despesa));
     if (arquivo_despesa == NULL) {
-        printf("erro na abertura do arquivo\n");
+        printf("erro de abertura\n");
     } else {
-        printf("Digite o nome da despesa que deseja\n");
-        scanf("%s", nome);
-        while (fread(&custo[i], sizeof(despesa), 1, arquivo_despesa) == 1) {
-            if (strcmp(nome, custo[i].nome_despesa) == 0) {
-                //custo[i].nome_despesa = '\0';
-                //custo[i].valor_despesa = 0;
+        printf("Digite o nome da despesa a ser deletada\n");
+        scanf("%s",nome);
+        while (fread(&custo[i], sizeof(custo[i]), 1, arquivo_despesa) == 1) {
+            custo = (despesa *) realloc(custo, (i + 2) * sizeof(despesa));
+            if (strcmp(nome, custo[i].nome_despesa) == 0){
+                posicao_delete = i;
+                printf("%d\n",posicao_delete);
             }
             i++;
         }
-        fclose(arquivo_despesa);
+    }
+    fclose(arquivo_despesa);
+    arquivo_despesa = fopen("despesas.txt","wb");
+    for (int j = 0; j <i ; j++) {
+        if (j == posicao_delete){
+            fwrite(&custo[posicao_delete + 1], sizeof(custo[posicao_delete + 1]), 1, arquivo_despesa);
+            j = j + 2;
+        }
+        fwrite(&custo[j], sizeof(custo[j]), 1, arquivo_despesa);
     }
 }
-*/
