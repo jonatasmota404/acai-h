@@ -10,7 +10,7 @@ typedef struct{
 }produto;
 
 typedef struct{
-    int quantidade_acai_trezentos, quantidade_acai_quinhentos;
+    float quantidade_acai_trezentos, quantidade_acai_quinhentos;
     float valor_compra;
 }venda;
 
@@ -44,11 +44,13 @@ adicionados *add;
 
 
 void cadastra_produto(){
-    int opcao=1;
+    int opcao = 1;
     quantidade_de_prod = 0;
     adicoes_estoque = 0;
+    FILE *arquivo_produto;
     prod = (produto*)malloc((quantidade_de_prod+1)*sizeof(produto));
     add = (adicionados*)malloc((adicoes_estoque+1)*sizeof(adicionados));
+    arquivo_produto = fopen("estoque.txt","ab");
     while(opcao != 0){
         prod = (produto*)realloc(prod,(quantidade_de_prod+1)*sizeof(produto));
         add = (adicionados*)realloc(add,(adicoes_estoque+1)*sizeof(adicionados));
@@ -56,7 +58,7 @@ void cadastra_produto(){
         printf("Insira o nome do produto: \n");
         scanf("%s", prod[quantidade_de_prod].nome_produto);
         
-        for(int j=0; j<quantidade_de_prod; j++){
+        for(int j = 0; j < quantidade_de_prod; j++){
             int retorno;
             retorno = strcmp(prod[j].nome_produto, prod[quantidade_de_prod].nome_produto);
             if(retorno==0){
@@ -77,22 +79,22 @@ void cadastra_produto(){
         printf("Digite 1 para continuar o cadastramento\n");
         printf("Digite 0 para voltar ao menu principal\n");
         scanf("%d",&opcao);
-
+        fwrite(&custo[i], sizeof(custo[i]), 1, arquivo_despesa);
         quantidade_de_prod++;
         adicoes_estoque++;
     }
 }
 
 void adicionar_no_estoque(){
-    int opcao=1;
+    int opcao = 1;
     int alterar;
     float quantidade_alterar; 
-	
+	add = (adicionados*)malloc(sizeof(adicionados));
     while(opcao!=0){
 		if(quantidade_de_prod==0){
         printf("Estoque vazio! Impossível adicionar");
 		}else{
-		//	add = (adicionados*)realloc,(add(adicoes_estoque+1)*sizeof(adicionados));
+			add = (adicionados*)realloc(add,(adicoes_estoque+1)*sizeof(adicionados));
 			
 			exibir_estoque();
 			
@@ -103,9 +105,8 @@ void adicionar_no_estoque(){
 
 			prod[alterar].quantidade_produto = prod[alterar].quantidade_produto + quantidade_alterar;
 
-		//	add[adicoes_estoque].valor_unit = prod[alterar].preco_produto;
-		//  add[adicoes_estoque].quantidade_add = quantidade_alterar;
-		//  é nessa caralha aqui que tá dando erro, assim que começo a mexer nela, quer ver tira o comentário daqui e do realloc ali em cima
+		    add[adicoes_estoque].valor_unit = prod[alterar].preco_produto;
+		    add[adicoes_estoque].quantidade_add = quantidade_alterar;
 
 			printf("Digite 1 para realizar outra adição\n");
 			printf("Digite 0 para voltar ao menu principal\n");
@@ -117,8 +118,8 @@ void adicionar_no_estoque(){
 }
 
 void vender(){
-    int opcao=1;
-    int i;
+    int opcao = 1;
+    int i = 0;
     venda *vender;
     vender = (venda*)malloc((quantidade_de_vendas+1)*sizeof(venda));
 
@@ -130,13 +131,13 @@ void vender(){
         guarnicao = (acompanhamentos*)realloc(guarnicao,(quantidade_de_vendas+2)*sizeof(acompanhamentos));
 
         printf("Insira a quantidade de açaís de 300ml a ser vendidos: \n");
-        scanf("%d", &vender[quantidade_de_vendas].quantidade_acai_trezentos);
+        scanf("%f", &vender[quantidade_de_vendas].quantidade_acai_trezentos);
         printf("Insira a quantidade de açaís de 300ml a ser vendidos: \n");
-        scanf("%d", &vender[quantidade_de_vendas].quantidade_acai_quinhentos);
+        scanf("%f", &vender[quantidade_de_vendas].quantidade_acai_quinhentos);
 
         cardapio();
 
-        if(&vender[quantidade_de_vendas].quantidade_acai_trezentos>0){
+        if(&vender[quantidade_de_vendas].quantidade_acai_trezentos > 0){
             for(i=0; i<vender[quantidade_de_vendas].quantidade_acai_trezentos; i++){
                 printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
                 scanf("%d", &acompanhamento_um);
@@ -151,7 +152,7 @@ void vender(){
             }
         }
         if(&vender[quantidade_de_vendas].quantidade_acai_quinhentos>0){
-            for(i=0; i<vender[quantidade_de_vendas].quantidade_acai_quinhentos; i++){
+            for(i=0; i <vender[quantidade_de_vendas].quantidade_acai_quinhentos; i++){
                 printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
                 scanf("%d", &acompanhamento_um);
                 printf("Selecione o primeiro acompanhamento do açaí de 300ml número %d: (pelo ID)\n", i);
@@ -165,7 +166,7 @@ void vender(){
             }
         }
 
-        vender[quantidade_de_vendas].valor_compra -> ((vender[quantidade_de_vendas].quantidade_acai_trezentos * vender.preco_acai_trezentos) + (vender[quantidade_de_vendas].quantidade_acai_quinhentos * vender.preco_acai_quinhentos));
+        vender[quantidade_de_vendas].valor_compra = (((vender[quantidade_de_vendas].quantidade_acai_trezentos) * (vender->quantidade_acai_trezentos)) + ((vender[quantidade_de_vendas].quantidade_acai_quinhentos) * (vender->quantidade_acai_trezentos)));
 		
         printf("Digite 1 para realizar outra venda\n");
         printf("Digite 0 para voltar ao menu principal\n");

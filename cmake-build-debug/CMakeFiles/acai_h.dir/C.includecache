@@ -21,6 +21,8 @@ stdlib.h
 -
 math.h
 -
+string.h
+-
 
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/funcionario.h
 stdio.h

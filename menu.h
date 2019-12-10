@@ -37,13 +37,22 @@ void menu_estoque(){
     printf("****************MENU ESTOQUE****************\n");
     printf("Selecione uma das opções a baixo:\n");
     printf("1 - cadastrar novos produtos no estoque\n");
+    printf("2 - vender\n");
+    printf("3 - adiciona estoque\n");
+    printf("4 - exibe estoque\n");
     scanf("%d",&opcao);
     switch(opcao){
         case 1:
             cadastra_produto();
             break;
         case 2:
-            //cadastra_produto();
+            vender();
+            break;
+        case 3:
+            adicionar_no_estoque();
+            break;
+        case 4:
+            exibir_estoque();
             break;
         default:
             printf("opcao invalida");
