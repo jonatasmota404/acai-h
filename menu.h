@@ -32,7 +32,31 @@ void menu_despesa(){
     }
 }
 
-void menu_estoque(){
+void menu_funcionario(){
+    int opcao;
+    printf("****************MENU FUNCIONARIOS****************\n");
+    printf("Selecione uma das opções a baixo:\n");
+    printf("1 - cadastra funcionario\n");
+    printf("2 - lista funcionarios\n");
+    printf("3 - pesquisa o funcionario\n");
+    scanf("%d",&opcao);
+    switch(opcao){
+        case 1:
+            cadastro_funcionario();
+            break;
+        case 2:
+            ler_arquivo_funcionario();
+            break;
+        case 3:
+            pesquisa_nome_funcionario();
+            break;
+        default:
+            printf("opcao invalida");
+            break;
+    }
+}
+
+ void menu_estoque(){
     int opcao;
     printf("****************MENU ESTOQUE****************\n");
     printf("Selecione uma das opções a baixo:\n");
@@ -60,39 +84,11 @@ void menu_estoque(){
     }
 }
 
-void menu_compra_venda(){
-
-}
-
-void menu_funcionario(){
-    int opcao;
-    printf("****************MENU FUNCIONARIOS****************\n");
-    printf("Selecione uma das opções a baixo:\n");
-    printf("1 - cadastra funcionario\n");
-    printf("2 - lista funcionarios\n");
-    printf("3 - pesquisa o funcionario\n");
-    scanf("%d",&opcao);
-    switch(opcao){
-        case 1:
-            cadastro_funcionario();
-            break;
-        case 2:
-            ler_arquivo_funcionario();
-            break;
-        case 3:
-            pesquisa_nome_funcionario();
-            break;
-        default:
-            printf("opcao invalida");
-            break;
-    }
-}
-
- void menu() {
+void menu() {
     int opcao;
     int true = 1;
     while (true != 0) {
-        printf("****************MENU PRINCIPAL****************\n");
+        printf("***************MENU PRINCIPAL***************\n");
         printf("Selecione uma das opções a baixo:\n");
         printf("0 - para sair\n");
         printf("1 - menu despesas\n");
