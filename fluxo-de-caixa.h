@@ -98,22 +98,30 @@ float ler_venda(int ler_mes_ou_dia,int dia, int mes, int ano){
 
 void fluxo_de_caixa_mes(){
     int mes,dia,ano;
+    int opcao = 1;
     float fluxo_do_mes;
     int ler_mes_ou_dia = 1;
     printf("Digite a data de hoje\n");
     scanf("%d %d %d",&dia,&mes,&ano);
     fluxo_do_mes = (ler_venda(ler_mes_ou_dia,dia,mes,ano))-(ler_despesa_funcionario() +
             ler_valor_despesa(ler_mes_ou_dia,dia,mes,ano) + ler_compra(ler_mes_ou_dia,dia,mes,ano));
-    if (fluxo_do_mes < 0){
-        printf("Fluxo de caixa negativo, você possui mais despesas que receita sua divida é %.2f\n", fluxo_do_mes);
-    } else if(fluxo_do_mes > 0){
-        printf("Fluxo de caixa positivo seu lucro é %.2f\n",fluxo_do_mes);
+    while (opcao != 0){
+        if (fluxo_do_mes < 0){
+            printf("Fluxo de caixa negativo, você possui mais despesas que receita sua divida é %.2f\n", fluxo_do_mes);
+            printf("Digite 0 para voltar ao menu administração\n");
+            scanf("%d",&opcao);
+        } else if(fluxo_do_mes > 0){
+            printf("Fluxo de caixa positivo seu lucro é %.2f\n",fluxo_do_mes);
+            printf("Digite 0 para voltar ao menu administração\n");
+            scanf("%d",&opcao);
+        }
     }
 }
 
 void fluxo_de_caixa_dia(){
     int mes,dia,ano;
     int i = 0;
+    int opcao = 1;
     float fluxo_do_dia = 0;
     int ler_mes_ou_dia = 0;
     FILE *arquivo_funcionario;
@@ -134,13 +142,15 @@ void fluxo_de_caixa_dia(){
         i++;
     }
     fclose(arquivo_funcionario);
-    if (fluxo_do_dia < 0){
-        printf("Fluxo de caixa negativo, você possui mais despesas que receita sua divida é %.2f\n", fluxo_do_dia);
-    } else if(fluxo_do_dia > 0){
-        printf("Fluxo de caixa positivo seu lucro é %.2f\n",fluxo_do_dia);
+    while (opcao != 0){
+        if (fluxo_do_dia < 0){
+            printf("Fluxo de caixa negativo, você possui mais despesas que receita sua divida é %.2f\n", fluxo_do_dia);
+            printf("Digite 0 para voltar ao menu administração\n");
+            scanf("%d",&opcao);
+        } else if(fluxo_do_dia > 0){
+            printf("Fluxo de caixa positivo seu lucro é %.2f\n",fluxo_do_dia);
+            printf("Digite 0 para voltar ao menu administração\n");
+            scanf("%d",&opcao);
+        }
     }
-    printf("%f\n",ler_venda(ler_mes_ou_dia,dia,mes,ano));
-    printf("%f\n",ler_valor_despesa(ler_mes_ou_dia,dia,mes,ano));
-    printf("%f\n",ler_compra(ler_mes_ou_dia,dia,mes,ano));
-    printf("%f\n",ler_despesa_funcionario(ler_mes_ou_dia,dia,mes,ano));
 }

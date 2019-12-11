@@ -71,6 +71,7 @@ void ler_arquivo_funcionario(){
     funcionario *cadastro;
     FILE *arquivo_funcionario;
     int i = 0;
+    int opcao = 1;
     cadastro = (funcionario*)malloc(sizeof(funcionario));
     arquivo_funcionario = fopen("funcionario.txt", "rb");
     if (arquivo_funcionario == NULL){
@@ -82,14 +83,18 @@ void ler_arquivo_funcionario(){
             i++;
         }
         fclose(arquivo_funcionario);
-        for (int d = 0; d < i; ++d) {
-            printf("%s\n",cadastro[d].nome_funcionario);
-            printf("%s\n",cadastro[d].cpf_funcionario);
-            printf("%d / %d / %d \n",
-                    cadastro[d].data_nascimento.dia,
-                   cadastro[d].data_nascimento.mes,
-                   cadastro[d].data_nascimento.ano);
-            printf("%.2f\n", cadastro[d].salario_funcionario);
+        while (opcao != 0){
+            for (int d = 0; d < i; ++d) {
+                printf("Nome: %s\n",cadastro[d].nome_funcionario);
+                printf("CPF: %s\n",cadastro[d].cpf_funcionario);
+                printf("Data: %d / %d / %d \n",
+                       cadastro[d].data_nascimento.dia,
+                       cadastro[d].data_nascimento.mes,
+                       cadastro[d].data_nascimento.ano);
+                printf("Salário: %.2f\n", cadastro[d].salario_funcionario);
+            }
+            printf("Digite 0 para voltar ao menu funcionario\n");
+            scanf("%d",&opcao);
         }
     }
 }
@@ -99,6 +104,7 @@ void pesquisa_nome_funcionario(){
     funcionario *cadastro;
     char nome[50];
     int i = 0;
+    int opcao = 1;
     arquivo_funcionario = fopen("funcionario.txt","rb");
     cadastro = (funcionario*)malloc(sizeof(funcionario));
     if(arquivo_funcionario == NULL){
@@ -109,11 +115,16 @@ void pesquisa_nome_funcionario(){
         scanf("%s",nome);
         while (fread(&cadastro[i], sizeof(funcionario),1,arquivo_funcionario) == 1){
             if (strcmp(nome, cadastro[i].nome_funcionario) == 0){
-                printf("%s\n", cadastro[i].nome_funcionario);
-                printf("%s\n",cadastro[i].cpf_funcionario);
-                printf("%d /%d /%d\n", cadastro[i].data_nascimento.dia,
+                printf("Nome: %s\n", cadastro[i].nome_funcionario);
+                printf("CPF: %s\n",cadastro[i].cpf_funcionario);
+                printf("Data: %d /%d /%d\n", cadastro[i].data_nascimento.dia,
                        cadastro[i].data_nascimento.mes,cadastro[i].data_nascimento.ano);
-                printf("%.2f\n", cadastro[i].salario_funcionario);
+                printf("Salário: %.2f\n", cadastro[i].salario_funcionario);
+                printf("Digite 0 para voltar ao menu funcionario\n");
+                scanf("%d",&opcao);
+                if (opcao == 0){
+                    break;
+                }
             }
             i++;
         }

@@ -78,7 +78,7 @@ void ler_arquivo_despesa(){
                 printf("%d / %d / %d \n", custo[j].vencimento.dia,
                        custo[j].vencimento.mes, custo[j].vencimento.ano);
             }
-            printf("Digite 0 para voltar ao menu estoque\n");
+            printf("Digite 0 para voltar ao menu administração\n");
             scanf("%d",&opcao);
         }
     }
@@ -103,7 +103,7 @@ void pesquisa_nome_despesa(){
                 printf("Valor: %f\n",custo[i].valor_despesa);
                 printf("Vencimento: %d / %d / %d \n",custo[i].vencimento.dia,
                        custo[i].vencimento.mes,custo[i].vencimento.ano);
-                printf("Digite 0 para voltar ao menu despesa\n");
+                printf("Digite 0 para voltar ao menu administração\n");
                 scanf("%d",&opcao);
                 if (opcao == 0){
                     break;

@@ -76,9 +76,9 @@ void cadastra_produto(){
             }
         }
 
-        printf("Insira o preco do produto: \n");
+        printf("Insira o valor unitário do produto: \n");
         scanf("%f", &prod[quantidade_de_prod].preco_produto);
-        printf("Insira a quantidade do produto: \n");
+        printf("Insira a quantidade do produto: (L ou Kg) \n");
         scanf("%f", &prod[quantidade_de_prod].quantidade_produto);
         prod[quantidade_de_prod].id = quantidade_de_prod;
 
@@ -202,7 +202,7 @@ void vender(){
                 printf("Estoque vazio, não há nada para vender!");
             }else{
 
-                printf("Insira o tamanho do açaí a ser vendido: (300 ou 500) \n");
+                printf("Insira o tamanho do açaí a ser vendido: (300 ml ou 500 ml) \n");
                 scanf("%d", &acai_p[quantidade_de_vendas].tamanho);
 				int aux_tamanho = acai_p[quantidade_de_vendas].tamanho;
 				//cardapio();
@@ -266,8 +266,9 @@ void vender(){
 void exibir_estoque(){
     produto *prod;
     FILE *arquivo_estoque;
-    int k;
+    int k = 0;
     int quantidade_de_prod=0;
+    int opcao = 1;
     arquivo_estoque = fopen("estoque.txt","rb");
     prod = (produto*)malloc((quantidade_de_prod+1)*sizeof(produto));
 
@@ -279,9 +280,13 @@ void exibir_estoque(){
             k++;
         }
         fclose(arquivo_estoque);
-        for(int j=0; j<k; j++){
-            printf("ID %d | Produto: %s | Preco unitário: %.2f | Quantidade %.4f\n",
-                   j, prod[j].nome_produto, prod[j].preco_produto, prod[j].quantidade_produto);
+        while (opcao != 0){
+            for(int j=0; j<k; j++){
+                printf("ID %d | Produto: %s | Preco unitário: %.2f | Quantidade %.4f(L ou Kg)\n",
+                       j, prod[j].nome_produto, prod[j].preco_produto, prod[j].quantidade_produto);
+            }
+            printf("Digite 0 para voltar ao menu estoque\n");
+            scanf("%d",&opcao);
         }
     }
 }
