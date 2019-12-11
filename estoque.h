@@ -222,6 +222,7 @@ void vender(){
                         prod[acai_p[i].acompanhamento_tres].quantidade_produto = prod[acai_p[i].acompanhamento_tres].quantidade_produto - 0.02;
 
                     }
+                    vende[quantidade_de_vendas].valor_venda = 8;
                 }
                 
                 if(aux_tamanho == 500){
@@ -239,14 +240,14 @@ void vender(){
                         prod[acai_p[i].acompanhamento_dois].quantidade_produto = prod[acai_p[i].acompanhamento_dois].quantidade_produto - 0.02;
                         prod[acai_p[i].acompanhamento_tres].quantidade_produto = prod[acai_p[i].acompanhamento_tres].quantidade_produto - 0.02;
                     }
+                    vende[quantidade_de_vendas].valor_venda = 13;
                 }
                 arquivo_estoque = fopen("estoque.txt","wb");
                 for(i=0; i < k; i++){
                     fwrite(&prod[i], sizeof(prod[i]), 1, arquivo_estoque);
                 }
                 fclose(arquivo_estoque);
-                
-                vende[quantidade_de_vendas].valor_venda = (((vende[quantidade_de_vendas].quantidade_acai_trezentos) * (preco_acai_trezentos)) + ((vende[quantidade_de_vendas].quantidade_acai_quinhentos) * (preco_acai_quinhentos)));
+                                
                 fwrite(&vende[quantidade_de_vendas], sizeof(vende[quantidade_de_vendas]), 1, arquivo_venda);
 				fwrite(&acai_p[quantidade_de_vendas], sizeof(acai_p[quantidade_de_vendas]), 1, arquivo_venda);
 				
