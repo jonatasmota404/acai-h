@@ -24,6 +24,16 @@ math.h
 string.h
 -
 
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/estruturas-fluxo-de-caixa.h
+
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/fluxo-de-caixa.h
+stdio.h
+-
+stdlib.h
+-
+estruturas-fluxo-de-caixa.h
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/estruturas-fluxo-de-caixa.h
+
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/funcionario.h
 stdio.h
 -
@@ -47,4 +57,6 @@ estoque.h
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/estoque.h
 funcionario.h
 /cygdrive/c/Users/jjuni/CLionProjects/acai-h/funcionario.h
+fluxo-de-caixa.h
+/cygdrive/c/Users/jjuni/CLionProjects/acai-h/fluxo-de-caixa.h
 
