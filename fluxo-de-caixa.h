@@ -56,12 +56,12 @@ float ler_compra(int ler_mes_ou_dia,int dia, int mes, int ano){
     while (fread(&add[i], sizeof(add[i]), 1, arquivo_compra) == 1){
         add = (adicionados_fx *)realloc(add,(i+2)* sizeof(adicionados_fx));
         if (ler_mes_ou_dia == 1){
-            if (mes == add[i].dataEstoque_compra.mes && ano == add[i].dataEstoque_compra.ano){
+            if (mes == add[i].dataEstoque_compra_fx.mes && ano == add[i].dataEstoque_compra_fx.ano){
                 valor_compra = valor_compra + (add[i].valor_unit*add[i].quantidade_add);
             }
         } else if (ler_mes_ou_dia == 0){
-            if (dia == add[i].dataEstoque_compra.dia && mes == add[i].dataEstoque_compra.mes &&
-            ano == add[i].dataEstoque_compra.ano){
+            if (dia == add[i].dataEstoque_compra_fx.dia && mes == add[i].dataEstoque_compra_fx.mes &&
+            ano == add[i].dataEstoque_compra_fx.ano){
                 valor_compra = valor_compra + (add[i].valor_unit*add[i].quantidade_add);
             }
         }
@@ -81,15 +81,13 @@ float ler_venda(int ler_mes_ou_dia,int dia, int mes, int ano){
     while (fread(&add[i], sizeof(add[i]), 1, arquivo_venda) == 1){
         add = (venda_fx *)realloc(add,(i+2)* sizeof(venda_fx));
         if (ler_mes_ou_dia == 1){
-            if (mes == add[i].dataEstoque_venda.mes && ano == add[i].dataEstoque_venda.ano){
-                valor_venda = valor_venda +
-                        (add[i].valor_venda*(add[i].quantidade_acai_trezentos + add[i].quantidade_acai_quinhentos));
+            if (mes == add[i].dataEstoque_venda_fx.mes && ano == add[i].dataEstoque_venda_fx.ano){
+                valor_venda = valor_venda + add[i].valor_venda;
             }
         } else if (ler_mes_ou_dia == 0){
-            if (dia == add[i].dataEstoque_venda.dia && mes == add[i].dataEstoque_venda.mes &&
-                ano == add[i].dataEstoque_venda.ano){
-                valor_venda = valor_venda +
-                        (add[i].valor_venda*(add[i].quantidade_acai_trezentos + add[i].quantidade_acai_quinhentos));
+            if (dia == add[i].dataEstoque_venda_fx.dia && mes == add[i].dataEstoque_venda_fx.mes &&
+                ano == add[i].dataEstoque_venda_fx.ano){
+                valor_venda = valor_venda + add[i].valor_venda;
             }
         }
         i++;

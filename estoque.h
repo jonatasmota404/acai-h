@@ -41,29 +41,29 @@ void adicionar_no_estoque();
 void vender();
 void exibir_estoque();
 
-//variáveis globais
-int adicoes_estoque=0;
 
 void cadastra_produto(){
     produto *prod;
     adicionados *add;
+    int adicoes_estoque=0;
     int opcao = 1;
     int quantidade_de_prod=0;
     adicoes_estoque = 0;
     FILE *arquivo_estoque;
-    
+    FILE *arquivo_compra;
+
     prod = (produto*)malloc((1)*sizeof(produto));
     add = (adicionados*)malloc((adicoes_estoque+1)*sizeof(adicionados));
-    
+
     arquivo_estoque = fopen("estoque.txt","ab");
-    
+    arquivo_compra = fopen("compra.txt", "ab");
     while(opcao != 0){
         prod = (produto*)realloc(prod,(quantidade_de_prod+1)*sizeof(produto));
         add = (adicionados*)realloc(add,(adicoes_estoque+1)*sizeof(adicionados));
         printf("Digite o data de hoje\n");
-        scanf("%d %d %d", &add[quantidade_de_prod].dataEstoque_compra.dia,
-                &add[quantidade_de_prod].dataEstoque_compra.mes,
-                &add[quantidade_de_prod].dataEstoque_compra.ano);
+        scanf("%d %d %d", &add[adicoes_estoque].dataEstoque_compra.dia,
+              &add[adicoes_estoque].dataEstoque_compra.mes,
+              &add[adicoes_estoque].dataEstoque_compra.ano);
         printf("Insira o nome do produto: \n");
         scanf("%s", prod[quantidade_de_prod].nome_produto);
 
@@ -81,7 +81,7 @@ void cadastra_produto(){
         printf("Insira a quantidade do produto: \n");
         scanf("%f", &prod[quantidade_de_prod].quantidade_produto);
         prod[quantidade_de_prod].id = quantidade_de_prod;
-        
+
         printf("Produto cadastrado com sucesso! \n");
 
         add[adicoes_estoque].valor_unit = prod[quantidade_de_prod].preco_produto;
@@ -92,15 +92,18 @@ void cadastra_produto(){
         scanf("%d",&opcao);
 
         fwrite(&prod[quantidade_de_prod], sizeof(prod[quantidade_de_prod]), 1, arquivo_estoque);
+        fwrite(&add[adicoes_estoque], sizeof(add[adicoes_estoque]), 1, arquivo_compra);
         quantidade_de_prod++;
         adicoes_estoque++;
     }
     fclose(arquivo_estoque);
+    fclose(arquivo_compra);
 }
 
 void adicionar_no_estoque(){
     produto *prod;
     adicionados *add;
+    int adicoes_estoque = 0;
     int opcao = 1;
     int alterar;
     int k = 0;
