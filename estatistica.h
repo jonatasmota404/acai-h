@@ -12,40 +12,40 @@ void mais_pedidos(){
 	produto *prod;
 	acai *acai_p;
 	count *contador;
+    int quantidade_de_pedidos = 0;
 	
 	FILE *arquivo_estoque;
 	FILE *arquivo_venda;
 	FILE *arquivo_estatistica;
 	int k=0;
+	int i=0;
 	int l=0;
-	int j=0;
-	int quantidade_de_pedidos;
-	int i;
 	
-	contador = (count*)malloc((1)*sizeof(count));
+	contador = (count *)malloc((1)*sizeof(count));
 	prod = (produto*)malloc((1)*sizeof(produto));
 	acai_p = (acai*)malloc((1)*sizeof(acai));
 	
 	arquivo_estoque = fopen("estoque.txt", "rb");
 	arquivo_venda = fopen("venda.txt", "rb");
 	arquivo_estatistica = fopen("estatistica.txt", "ab");
-	
-	printf("Digite o data de hoje\n");
-    scanf("%d %d %d", &contador[quantidade_de_pedidos].data_estatistica,
-		&contador[quantidade_de_pedidos].data_estatistica,
-        &contador[quantidade_de_pedidos].data_estatistica);
+
+    printf("Digite o data de hoje\n");
+    scanf("%d %d %d", &contador[quantidade_de_pedidos].data_estatistica.dia,
+          &contador[quantidade_de_pedidos].data_estatistica.mes,
+          &contador[quantidade_de_pedidos].data_estatistica.ano);
 	
 	if(arquivo_estoque == NULL){
 		printf("ERRO!");
 	}else{
-		while(fread(prod[l], sizeof(prod[l]), 1, arquivo_estoque) == 1){
+		while(fread(&prod[l], sizeof(prod[l]), 1, arquivo_estoque) == 1){
 			prod = (produto*) realloc(prod,(l+2) * sizeof(produto));
+			l++;
 		}
 		fclose(arquivo_estoque);
 		if(arquivo_venda == NULL){
 		printf("Nenhuma venda realizada");
 		}else{
-			while(fread(acai_p[k], sizeof(acai_p[k]), 1, arquivo_venda) == 1){
+			while(fread(&acai_p[k], sizeof(acai_p[k]), 1, arquivo_venda) == 1){
 				acai_p = (acai*) realloc(acai_p,(k+2) *  sizeof(acai));
 				k++;
 			}

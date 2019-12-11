@@ -80,6 +80,9 @@
 		<Unit filename="/cygdrive/c/Users/jjuni/CLionProjects/acai-h/estoque.h">
 			<Option target="acai_h"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/jjuni/CLionProjects/acai-h/estruturas-fluxo-de-caixa.h">
+			<Option target="acai_h"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/jjuni/CLionProjects/acai-h/fluxo-de-caixa.h">
 			<Option target="acai_h"/>
 		</Unit>

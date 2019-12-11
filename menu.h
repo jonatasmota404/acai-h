@@ -4,12 +4,13 @@
 #include "estoque.h"
 #include "funcionario.h"
 #include "fluxo-de-caixa.h"
+#include "estatistica.h"
 
 void menu_despesa(){
     int opcao;
     int true = 1;
     while (true != 0){
-    printf("****************MENU DESPESA****************\n");
+    printf("****************MENU ADMINISTRAÇÃO****************\n");
     printf("Selecione uma das opções a baixo:\n");
     printf("0 - para voltar ao menu principal\n");
     printf("1 - cadastrar novas despesas\n");
@@ -17,6 +18,7 @@ void menu_despesa(){
     printf("3 - pesquisar por nome\n");
     printf("4 - fluxo de caixa do dia\n");
     printf("5 - fluxo de caixa do mês\n");
+    printf("6 - estatísticas de venda\n");
     scanf("%d",&opcao);
     switch(opcao) {
         case 0:
@@ -36,6 +38,9 @@ void menu_despesa(){
             break;
         case 5:
             fluxo_de_caixa_mes();
+            break;
+        case 6:
+            mais_pedidos();
             break;
         default:
             printf("opcao invalida");
@@ -117,7 +122,7 @@ void menu() {
         printf("***************MENU PRINCIPAL***************\n");
         printf("Selecione uma das opções a baixo:\n");
         printf("0 - para sair\n");
-        printf("1 - menu despesas\n");
+        printf("1 - menu administração\n");
         printf("2 - menu estoque\n");
         printf("3 - menu funcionarios\n");
         scanf("%d", &opcao);

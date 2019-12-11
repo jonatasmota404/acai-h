@@ -42,8 +42,6 @@ void vender();
 void exibir_estoque();
 
 //variáveis globais
-float preco_acai_trezentos = 8;
-float preco_acai_quinhentos = 13;
 int adicoes_estoque=0;
 
 void cadastra_produto(){
@@ -247,7 +245,7 @@ void vender(){
                     fwrite(&prod[i], sizeof(prod[i]), 1, arquivo_estoque);
                 }
                 fclose(arquivo_estoque);
-                                
+
                 fwrite(&vende[quantidade_de_vendas], sizeof(vende[quantidade_de_vendas]), 1, arquivo_venda);
 				fwrite(&acai_p[quantidade_de_vendas], sizeof(acai_p[quantidade_de_vendas]), 1, arquivo_venda);
 				
