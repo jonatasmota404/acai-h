@@ -10,6 +10,7 @@ void menu_despesa(){
     int opcao;
     int true = 1;
     while (true != 0){
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     printf("****************MENU ADMINISTRAÇÃO****************\n");
     printf("Selecione uma das opções a baixo:\n");
     printf("0 - para voltar ao menu principal\n");
@@ -46,6 +47,7 @@ void menu_despesa(){
             printf("opcao invalida");
             break;
         }
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 }
 
@@ -53,6 +55,7 @@ void menu_funcionario(){
     int opcao;
     int true = 1;
     while (true != 0) {
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     printf("****************MENU FUNCIONARIOS****************\n");
     printf("Selecione uma das opções a baixo:\n");
     printf("0 - para voltar ao menu principal\n");
@@ -77,6 +80,7 @@ void menu_funcionario(){
                 printf("opcao invalida");
                 break;
         }
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 }
 
@@ -84,6 +88,7 @@ void menu_funcionario(){
     int opcao;
     int true = 1;
      while (true != 0) {
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     printf("****************MENU ESTOQUE****************\n");
     printf("Selecione uma das opções a baixo:\n");
     printf("0 - para voltar ao menu principal\n");
@@ -112,6 +117,7 @@ void menu_funcionario(){
                  printf("opcao invalida");
                  break;
          }
+         printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
      }
 }
 
@@ -119,6 +125,7 @@ void menu() {
     int opcao;
     int true = 1;
     while (true != 0) {
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         printf("***************MENU PRINCIPAL***************\n");
         printf("Selecione uma das opções a baixo:\n");
         printf("0 - para sair\n");
@@ -144,5 +151,6 @@ void menu() {
                 printf("opcao invalida");
                 break;
         }
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 }
