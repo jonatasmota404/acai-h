@@ -137,7 +137,7 @@ void fluxo_de_caixa_dia(){
                     ler_valor_despesa(ler_mes_ou_dia,dia,mes,ano) + ler_compra(ler_mes_ou_dia,dia,mes,ano));
         } else {
             fluxo_do_dia = (ler_venda(ler_mes_ou_dia,dia,mes,ano))-(ler_valor_despesa(ler_mes_ou_dia,dia,mes,ano) +
-                    ler_compra(ler_mes_ou_dia,dia,mes,ano) + ler_despesa_funcionario());
+                    ler_compra(ler_mes_ou_dia,dia,mes,ano));
         }
         i++;
     }
