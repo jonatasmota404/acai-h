@@ -18,8 +18,7 @@ void mais_pedidos(){
 	FILE *arquivo_estatistica;
 	int k=0;
 	int i=0;
-	int l =0;
-
+	int l=0;
 	
 	contador = (count *)malloc((1)*sizeof(count));
 	prod = (produto_st*)malloc((1)*sizeof(produto_st));
@@ -30,7 +29,7 @@ void mais_pedidos(){
 	arquivo_estatistica = fopen("estatistica.txt", "ab");
 
 	if(arquivo_estoque == NULL){
-		printf("ERRO!");
+		printf("ERRO!\n");
 	}else{
 		while(fread(&prod[l], sizeof(prod[l]), 1, arquivo_estoque) == 1){
 			prod = (produto_st*) realloc(prod,(l+2) * sizeof(produto_st));
@@ -38,7 +37,7 @@ void mais_pedidos(){
 		}
 		fclose(arquivo_estoque);
 		if(arquivo_venda == NULL){
-		printf("Nenhuma venda realizada");
+		printf("Nenhuma venda realizada\n");
 		}else{
 			while(fread(&acai_p[k], sizeof(acai_p[k]), 1, arquivo_venda) == 1){
 				acai_p = (acai_st*) realloc(acai_p,(k+2) *  sizeof(acai_st));
@@ -66,7 +65,7 @@ void mais_pedidos(){
 			}
 			fclose(arquivo_estatistica);
 			for(i=0;i<k;i++){
-				printf("ID: %d | Produto: %s | Quantidade de vezes pedido: %d", i, prod[i].nome_produto, contador[i].conta);
+				printf("ID: %d | Produto: %s | Quantidade de vezes pedido: %d\n", i, prod[i].nome_produto, contador[i].conta);
 			}
 		}
 	}

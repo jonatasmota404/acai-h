@@ -109,7 +109,7 @@ void fluxo_de_caixa_mes(){
     if (fluxo_do_mes < 0){
         printf("Fluxo de caixa negativo, você possui mais despesas que receita sua divida é %.2f\n", fluxo_do_mes);
     } else if(fluxo_do_mes > 0){
-        printf("Fluxo de caixa positivo seu lucro é %.2f",fluxo_do_mes);
+        printf("Fluxo de caixa positivo seu lucro é %.2f\n",fluxo_do_mes);
     }
 }
 
@@ -139,6 +139,6 @@ void fluxo_de_caixa_dia(){
     if (fluxo_do_dia < 0){
         printf("Fluxo de caixa negativo, você possui mais despesas que receita sua divida é %.2f\n", fluxo_do_dia);
     } else if(fluxo_do_dia > 0){
-        printf("Fluxo de caixa positivo seu lucro é %.2f",fluxo_do_dia);
+        printf("Fluxo de caixa positivo seu lucro é %.2f\n",fluxo_do_dia);
     }
 }
