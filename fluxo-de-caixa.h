@@ -39,8 +39,36 @@ float ler_despesa_funcionario(int mes){
     return valor_funcionario;
 }
 
-float ler_compra_venda(){
+float ler_compra(int mes){
+    FILE *arquivo_compra;
+    adicionados *add;
+    float valor_compra = 0;
+    int i = 0;
+    add = (adicionados *)malloc(sizeof(adicionados));
+    arquivo_compra = fopen("compra.txt","rb");
+    while (fread(&add[i], sizeof(add[i]), 1, arquivo_compra) == 1){
+        if (mes == add[i].dataEstoque_compra.mes){
+            valor_compra = valor_compra + (add[i].valor_unit*add[i].quantidade_add);
+        }
+        i++;
+    }
+    return valor_compra;
+}
 
+float ler_venda(int mes){
+    FILE *arquivo_venda;
+    adicionados *add;
+    float valor_venda = 0;
+    int i = 0;
+    add = (adicionados *)malloc(sizeof(adicionados));
+    arquivo_venda = fopen("venda.txt","rb");
+    while (fread(&add[i], sizeof(add[i]), 1, arquivo_venda) == 1){
+        if (mes == add[i].dataEstoque_compra.mes){
+            valor_venda = valor_venda + (add[i].quantidade_add*add[i].valor_unit);
+        }
+        i++;
+    }
+    return valor_venda;
 }
 
 void fluxo_de_caixa(){
@@ -48,5 +76,6 @@ void fluxo_de_caixa(){
     float fluxo_do_mes;
     printf("Digite o mês\n");
     scanf("%d",&mes);
-    fluxo_do_mes = (ler_despesa_funcionario(mes) + ler_valor_despesa(mes));
+    fluxo_do_mes = (ler_venda(mes))-(ler_despesa_funcionario(mes) + ler_valor_despesa(mes) + ler_compra(mes));
+    printf("O caixa do mês é %f\n",fluxo_do_mes);
 }
