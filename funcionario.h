@@ -14,7 +14,8 @@ typedef struct {
 typedef struct{
     char nome_funcionario[50];
     char cpf_funcionario[20];
-    data_funcionario data;
+    data_funcionario data_nascimento;
+    data_funcionario data_pagamento;
     float salario_funcionario;
 }funcionario;
 
@@ -35,13 +36,15 @@ void cadastro_funcionario() {
             printf("Digite o CPF do funcionario:\n");
             scanf("%s", cadastro[i].cpf_funcionario);
             printf("Digite o dia do nascimento do funcionario:\n");
-            scanf("%d", &cadastro[i].data.dia);
+            scanf("%d", &cadastro[i].data_nascimento.dia);
             printf("Digite o mes do nascimento do funcionario:\n");
-            scanf("%d", &cadastro[i].data.mes);
+            scanf("%d", &cadastro[i].data_nascimento.mes);
             printf("Digite o ano do nascimento do funcionario:\n");
-            scanf("%d", &cadastro[i].data.ano);
+            scanf("%d", &cadastro[i].data_nascimento.ano);
             printf("Digite a pretencao salarial do funcionario:\n");
             scanf("%f", &cadastro[i].salario_funcionario);
+            printf("Digite a dia de pagamento do funcionário\n");
+            scanf("%d",&cadastro[i].data_pagamento.dia);
 
             printf("Digite 1 para continuar o cadastramento \n");
             printf("Digite 0 para voltar ao menu principal\n");
@@ -56,8 +59,8 @@ void cadastro_funcionario() {
         for (int d = 0; d < i; d++) {
             printf("%s\n",cadastro[d].nome_funcionario);
             printf("%s\n",cadastro[d].cpf_funcionario);
-            printf("%d / %d / %d \n",cadastro[d].data.dia,
-                   cadastro[d].data.mes,cadastro[d].data.ano);
+            printf("%d / %d / %d \n",cadastro[d].data_nascimento.dia,
+                   cadastro[d].data_nascimento.mes,cadastro[d].data_nascimento.ano);
             printf("%.2f\n", cadastro[d].salario_funcionario);
         }
         printf("Cadastro do(s) funcionario(s), feito com sucesso!\n");
@@ -83,9 +86,9 @@ void ler_arquivo_funcionario(){
             printf("%s\n",cadastro[d].nome_funcionario);
             printf("%s\n",cadastro[d].cpf_funcionario);
             printf("%d / %d / %d \n",
-                    cadastro[d].data.dia,
-                   cadastro[d].data.mes,
-                   cadastro[d].data.ano);
+                    cadastro[d].data_nascimento.dia,
+                   cadastro[d].data_nascimento.mes,
+                   cadastro[d].data_nascimento.ano);
             printf("%.2f\n", cadastro[d].salario_funcionario);
         }
     }
@@ -108,8 +111,8 @@ void pesquisa_nome_funcionario(){
             if (strcmp(nome, cadastro[i].nome_funcionario) == 0){
                 printf("%s\n", cadastro[i].nome_funcionario);
                 printf("%s\n",cadastro[i].cpf_funcionario);
-                printf("%d /%d /%d\n", cadastro[i].data.dia,
-                       cadastro[i].data.mes,cadastro[i].data.ano);
+                printf("%d /%d /%d\n", cadastro[i].data_nascimento.dia,
+                       cadastro[i].data_nascimento.mes,cadastro[i].data_nascimento.ano);
                 printf("%.2f\n", cadastro[i].salario_funcionario);
             }
             i++;

@@ -45,7 +45,6 @@ void exibir_estoque();
 float preco_acai_trezentos = 8;
 float preco_acai_quinhentos = 13;
 int adicoes_estoque=0;
-int acompanhamento_um, acompanhamento_dois, acompanhamento_tres;
 
 void cadastra_produto(){
     produto *prod;
@@ -108,7 +107,7 @@ void adicionar_no_estoque(){
     int alterar;
     int k = 0;
     float quantidade_alterar;
-    prod = (produto *)malloc(sizeof(produto));
+    prod = (produto*)malloc(sizeof(produto));
 
     add = (adicionados*)malloc((adicoes_estoque+1)*sizeof(adicionados));
     FILE *arquivo_compra;
@@ -218,9 +217,9 @@ void vender(){
                         
 						prod[0].quantidade_produto = prod[0].quantidade_produto - 0.3; //subtrair acai
 
-                        prod[acompanhamento_um].quantidade_produto = prod[acompanhamento_um].quantidade_produto - 0.02;
-                        prod[acompanhamento_dois].quantidade_produto = prod[acompanhamento_dois].quantidade_produto - 0.02;
-                        prod[acompanhamento_tres].quantidade_produto = prod[acompanhamento_tres].quantidade_produto - 0.02;
+                        prod[acai_p[i].acompanhamento_um].quantidade_produto = prod[acai_p[i].acompanhamento_um].quantidade_produto - 0.02;
+                        prod[acai_p[i].acompanhamento_dois].quantidade_produto = prod[acai_p[i].acompanhamento_dois].quantidade_produto - 0.02;
+                        prod[acai_p[i].acompanhamento_tres].quantidade_produto = prod[acai_p[i].acompanhamento_tres].quantidade_produto - 0.02;
 
                     }
                 }
@@ -236,9 +235,9 @@ void vender(){
 
                         prod[0].quantidade_produto = prod[0].quantidade_produto - 0.5; //subtrair acai
                         
-                        prod[acompanhamento_um].quantidade_produto = prod[acompanhamento_um].quantidade_produto - 0.02;
-                        prod[acompanhamento_dois].quantidade_produto = prod[acompanhamento_dois].quantidade_produto - 0.02;
-                        prod[acompanhamento_tres].quantidade_produto = prod[acompanhamento_tres].quantidade_produto - 0.02;
+                        prod[acai_p[i].acompanhamento_um].quantidade_produto = prod[acai_p[i].acompanhamento_um].quantidade_produto - 0.02;
+                        prod[acai_p[i].acompanhamento_dois].quantidade_produto = prod[acai_p[i].acompanhamento_dois].quantidade_produto - 0.02;
+                        prod[acai_p[i].acompanhamento_tres].quantidade_produto = prod[acai_p[i].acompanhamento_tres].quantidade_produto - 0.02;
                     }
                 }
                 arquivo_estoque = fopen("estoque.txt","wb");
@@ -284,11 +283,3 @@ void exibir_estoque(){
         }
     }
 }
-
-/*void cardapio(){
-for(int j=0; j<quantidade_de_prod; j++){
-printf("ID %d | Acompanhamento/Cobertura %s", j, prod[j].nome_produto);
-}
-}*/
-
-
