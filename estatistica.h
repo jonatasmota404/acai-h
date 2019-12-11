@@ -5,7 +5,7 @@
 
 typedef struct{
 	int conta;
-	data_estoque data_estistica;
+	data_estoque data_estatistica;
 }count;
 
 void mais_pedidos(){
@@ -19,7 +19,8 @@ void mais_pedidos(){
 	int k=0;
 	int l=0;
 	int j=0;
-	int count;
+	int quantidade_de_pedidos;
+	int i;
 	
 	contador = (count*)malloc((1)*sizeof(count));
 	prod = (produto*)malloc((1)*sizeof(produto));
@@ -30,9 +31,9 @@ void mais_pedidos(){
 	arquivo_estatistica = fopen("estatistica.txt", "ab");
 	
 	printf("Digite o data de hoje\n");
-    scanf("%d %d %d", &add[quantidade_de_prod].dataEstoque_compra.dia,
-		&add[quantidade_de_prod].dataEstoque_compra.mes,
-        &add[quantidade_de_prod].dataEstoque_compra.ano);
+    scanf("%d %d %d", &contador[quantidade_de_pedidos].data_estatistica,
+		&contador[quantidade_de_pedidos].data_estatistica,
+        &contador[quantidade_de_pedidos].data_estatistica);
 	
 	if(arquivo_estoque == NULL){
 		printf("ERRO!");
@@ -50,7 +51,7 @@ void mais_pedidos(){
 			}
 			fclose(arquivo_venda);
 			
-			for(int i=0; i<k; i++){
+			for(i=0; i<k; i++){
 				contador[i].conta = 0;
 			}
 
@@ -73,5 +74,6 @@ void mais_pedidos(){
 				printf("ID: %d | Produto: %s | Quantidade de vezes pedido: %d", i, prod[i].nome_produto, contador[i].conta);
 			}
 		}
+		quantidade_de_pedidos++;
 	}
 }
