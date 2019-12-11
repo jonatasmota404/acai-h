@@ -23,17 +23,16 @@ float ler_valor_despesa(int mes){
     return valor_despesa;
 }
 
-float ler_despesa_funcionario(int mes){
+float ler_despesa_funcionario(){
     FILE *arquivo_funcionario;
     funcionario *funcionario_p;
     float valor_funcionario = 0;
     int i = 0;
     funcionario_p = (funcionario *)malloc(sizeof(funcionario));
     arquivo_funcionario = fopen("funcionario.txt","rb");
+
     while (fread(&funcionario_p[i], sizeof(funcionario_p[i]), 1, arquivo_funcionario) == 1){
-        if (mes == funcionario_p[i].data.mes){
             valor_funcionario = valor_funcionario + funcionario_p[i].salario_funcionario;
-        }
         i++;
     }
     return valor_funcionario;
@@ -71,11 +70,31 @@ float ler_venda(int mes){
     return valor_venda;
 }
 
-void fluxo_de_caixa(){
-    int mes;
+void fluxo_de_caixa_mes(){
+    int mes,dia,ano;
     float fluxo_do_mes;
-    printf("Digite o mês\n");
-    scanf("%d",&mes);
-    fluxo_do_mes = (ler_venda(mes))-(ler_despesa_funcionario(mes) + ler_valor_despesa(mes) + ler_compra(mes));
+    printf("Digite a data de hoje\n");
+    scanf("%d %d %d",&dia,&mes,&ano);
+    fluxo_do_mes = (ler_venda(mes))-(ler_despesa_funcionario() + ler_valor_despesa(mes) + ler_compra(mes));
     printf("O caixa do mês é %f\n",fluxo_do_mes);
+}
+
+void fluxo_de_caixa_dia(){
+    int mes,dia,ano;
+    int i = 0;
+    float fluxo_do_mes = 0;
+    FILE *arquivo_funcionario;
+    funcionario *funcionario_p;
+    funcionario_p = (funcionario *)malloc(sizeof(funcionario));
+    arquivo_funcionario = fopen("funcionario.txt","rb");
+    printf("Digite a data de hoje\n");
+    scanf("%d %d %d",&dia,&mes,&ano);
+    while (fread(&funcionario_p[i], sizeof(funcionario_p[i]), 1, arquivo_funcionario) == 1){
+        funcionario_p = (funcionario *)realloc(funcionario_p,(i+2)*sizeof(funcionario));
+        if (dia == funcionario_p[i].data_pagamento.dia){
+            fluxo_do_mes = (ler_venda(mes))-(ler_despesa_funcionario() + ler_valor_despesa(mes) + ler_compra(mes));
+        }
+        i++;
+    }
+    printf("O caixa do mês é %f\n", fluxo_do_mes);
 }

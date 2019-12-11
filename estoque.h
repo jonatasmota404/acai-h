@@ -214,7 +214,7 @@ void vender(){
                     }
                 }
                 if(&vende[quantidade_de_vendas].quantidade_acai_quinhentos>0){
-                    for(i=0; i<vende[quantidade_de_vendas].quantidade_acai_quinhentos; i++){
+                    for(i = 0; i<vende[quantidade_de_vendas].quantidade_acai_quinhentos; i++){
                         printf("Selecione o primeiro acompanhamento do açaí de 500ml número %d: (pelo ID)\n", i);
                         scanf("%d", &guarnicao[quantidade_de_vendas].acompanhamento_um);
                         printf("Selecione o segundo acompanhamento do açaí de 500ml número %d: (pelo ID)\n", i);

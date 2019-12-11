@@ -3,6 +3,7 @@
 #include "despesas.h"
 #include "estoque.h"
 #include "funcionario.h"
+#include "fluxo-de-caixa.h"
 
 void menu_despesa(){
     int opcao;
@@ -14,7 +15,7 @@ void menu_despesa(){
     printf("1 - cadastrar novas despesas\n");
     printf("2 - visualizar as despesas\n");
     printf("3 - pesquisar por nome\n");
-    printf("4 - deleta despesa\n");
+    printf("4 - fluxo de caixa mês\n");
     scanf("%d",&opcao);
     switch(opcao) {
         case 0:
@@ -30,7 +31,7 @@ void menu_despesa(){
             pesquisa_nome_despesa();
             break;
         case 4:
-            deleta_item();
+            fluxo_de_caixa_mes();
             break;
         default:
             printf("opcao invalida");

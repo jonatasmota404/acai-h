@@ -13,7 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e95e7104-d315-4f3a-9e1e-a484f4071a15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/despesas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/despesas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estoque.h" beforeDir="false" afterPath="$PROJECT_DIR$/estoque.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fluxo-de-caixa.h" beforeDir="false" afterPath="$PROJECT_DIR$/fluxo-de-caixa.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/funcionario.h" beforeDir="false" afterPath="$PROJECT_DIR$/funcionario.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.h" beforeDir="false" afterPath="$PROJECT_DIR$/menu.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +67,7 @@
       <updated>1575911843693</updated>
       <workItem from="1575911847495" duration="1939000" />
       <workItem from="1575984057916" duration="10199000" />
-      <workItem from="1576010308064" duration="945000" />
+      <workItem from="1576010308064" duration="7633000" />
     </task>
     <servers />
   </component>
@@ -82,5 +86,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/estoque.h</url>
+          <line>215</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
