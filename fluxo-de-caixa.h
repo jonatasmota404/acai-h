@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include "estruturas-fluxo-de-caixa.h"
 
-
 float ler_valor_despesa(int ler_mes_ou_dia,int dia, int mes, int ano){
     FILE *arquivo_despesa;
     despesa_fx *custo;
@@ -26,6 +25,7 @@ float ler_valor_despesa(int ler_mes_ou_dia,int dia, int mes, int ano){
         }
         i++;
     }
+    fclose(arquivo_despesa);
     return valor_despesa;
 }
 
@@ -42,6 +42,7 @@ float ler_despesa_funcionario(){
             valor_funcionario = valor_funcionario + funcionario_p[i].salario_funcionario;
         i++;
     }
+    fclose(arquivo_funcionario);
     return valor_funcionario;
 }
 
@@ -64,9 +65,9 @@ float ler_compra(int ler_mes_ou_dia,int dia, int mes, int ano){
                 valor_compra = valor_compra + (add[i].valor_unit*add[i].quantidade_add);
             }
         }
-
         i++;
     }
+    fclose(arquivo_compra);
     return valor_compra;
 }
 
@@ -93,6 +94,7 @@ float ler_venda(int ler_mes_ou_dia,int dia, int mes, int ano){
         }
         i++;
     }
+    fclose(arquivo_venda);
     return valor_venda;
 }
 
@@ -133,6 +135,7 @@ void fluxo_de_caixa_dia(){
         }
         i++;
     }
+    fclose(arquivo_funcionario);
     if (fluxo_do_dia < 0){
         printf("Fluxo de caixa negativo, você possui mais despesas que receita sua divida é %.2f\n", fluxo_do_dia);
     } else if(fluxo_do_dia > 0){
