@@ -131,7 +131,7 @@ void fluxo_de_caixa_dia(){
                     ler_valor_despesa(ler_mes_ou_dia,dia,mes,ano) + ler_compra(ler_mes_ou_dia,dia,mes,ano));
         } else {
             fluxo_do_dia = (ler_venda(ler_mes_ou_dia,dia,mes,ano))-(ler_valor_despesa(ler_mes_ou_dia,dia,mes,ano) +
-                    ler_compra(ler_mes_ou_dia,dia,mes,ano));
+                    ler_compra(ler_mes_ou_dia,dia,mes,ano) + ler_despesa_funcionario());
         }
         i++;
     }
@@ -141,4 +141,8 @@ void fluxo_de_caixa_dia(){
     } else if(fluxo_do_dia > 0){
         printf("Fluxo de caixa positivo seu lucro é %.2f\n",fluxo_do_dia);
     }
+    printf("%f\n",ler_venda(ler_mes_ou_dia,dia,mes,ano));
+    printf("%f\n",ler_valor_despesa(ler_mes_ou_dia,dia,mes,ano));
+    printf("%f\n",ler_compra(ler_mes_ou_dia,dia,mes,ano));
+    printf("%f\n",ler_despesa_funcionario(ler_mes_ou_dia,dia,mes,ano));
 }

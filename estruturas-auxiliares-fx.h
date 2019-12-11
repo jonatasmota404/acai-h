@@ -20,7 +20,7 @@ typedef struct {
 }data_estoque_fx;
 
 typedef struct{
-    data_estoque_fx dataEstoque_venda;
+    data_estoque dataEstoque_venda;
     float quantidade_acai_trezentos, quantidade_acai_quinhentos;
     float valor_venda;
 }venda_fx;
