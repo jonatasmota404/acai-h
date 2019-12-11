@@ -12,11 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e95e7104-d315-4f3a-9e1e-a484f4071a15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/estruturas-fluxo-de-caixa.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/despesas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/despesas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/acai_h.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/acai_h.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/acai_h.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/acai_h.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/acai_h.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/acai_h.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/acai_h.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/acai_h.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/estoque.h" beforeDir="false" afterPath="$PROJECT_DIR$/estoque.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fluxo-de-caixa.h" beforeDir="false" afterPath="$PROJECT_DIR$/fluxo-de-caixa.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcionario.h" beforeDir="false" afterPath="$PROJECT_DIR$/funcionario.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.h" beforeDir="false" afterPath="$PROJECT_DIR$/menu.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,6 +31,20 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
@@ -67,7 +85,7 @@
       <updated>1575911843693</updated>
       <workItem from="1575911847495" duration="1939000" />
       <workItem from="1575984057916" duration="10199000" />
-      <workItem from="1576010308064" duration="7633000" />
+      <workItem from="1576010308064" duration="11138000" />
     </task>
     <servers />
   </component>
@@ -86,16 +104,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/estoque.h</url>
-          <line>215</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

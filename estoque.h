@@ -18,7 +18,7 @@ typedef struct{
 typedef struct{
     data_estoque dataEstoque_venda;
     float quantidade_acai_trezentos, quantidade_acai_quinhentos;
-    float valor_compra;
+    float valor_venda;
 }venda;
 
 typedef struct{
@@ -234,7 +234,7 @@ void vender(){
                 }
                 fclose(arquivo_estoque);
 
-                vende[quantidade_de_vendas].valor_compra = (((vende[quantidade_de_vendas].quantidade_acai_trezentos) * (preco_acai_trezentos)) + ((vende[quantidade_de_vendas].quantidade_acai_quinhentos) * (preco_acai_quinhentos)));
+                vende[quantidade_de_vendas].valor_venda = (((vende[quantidade_de_vendas].quantidade_acai_trezentos) * (preco_acai_trezentos)) + ((vende[quantidade_de_vendas].quantidade_acai_quinhentos) * (preco_acai_quinhentos)));
 
                 fwrite(&vende[quantidade_de_vendas], sizeof(vende[quantidade_de_vendas]), 1, arquivo_venda);
 
