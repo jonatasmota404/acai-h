@@ -3,8 +3,10 @@
 
 CMakeFiles/acai_h.dir/main.c.o
  /cygdrive/c/Users/jjuni/CLionProjects/acai-h/despesas.h
+ /cygdrive/c/Users/jjuni/CLionProjects/acai-h/estatistica.h
  /cygdrive/c/Users/jjuni/CLionProjects/acai-h/estoque.h
- /cygdrive/c/Users/jjuni/CLionProjects/acai-h/estruturas-fluxo-de-caixa.h
+ /cygdrive/c/Users/jjuni/CLionProjects/acai-h/estruturas-auxiliares-fx.h
+ /cygdrive/c/Users/jjuni/CLionProjects/acai-h/estruturas-auxiliares-st.h
  /cygdrive/c/Users/jjuni/CLionProjects/acai-h/fluxo-de-caixa.h
  /cygdrive/c/Users/jjuni/CLionProjects/acai-h/funcionario.h
  /cygdrive/c/Users/jjuni/CLionProjects/acai-h/main.c

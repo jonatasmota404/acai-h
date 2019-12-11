@@ -114,7 +114,7 @@ void adicionar_no_estoque(){
     arquivo_estoque = fopen("estoque.txt", "rb");
 
     if (arquivo_estoque == NULL){
-        printf("erro de abertura\n");
+        printf("Erro de abertura\n");
     }else{
         while (fread(&prod[k], sizeof(prod[k]), 1, arquivo_estoque) == 1) {
             prod = (produto*) realloc(prod, (k + 2) * sizeof(produto));
@@ -124,7 +124,7 @@ void adicionar_no_estoque(){
 
         while(opcao != 0){
             if(arquivo_estoque == NULL){
-                printf("Estoque vazio! Impossível adicionar");
+                printf("Estoque vazio! Impossível adicionar\n");
             }else{
                 add = (adicionados*)realloc(add,(adicoes_estoque+1)*sizeof(adicionados));
 
@@ -176,7 +176,7 @@ void vender(){
     arquivo_venda = fopen("venda.txt","ab");
     arquivo_estoque = fopen("estoque.txt","rb");
     if (arquivo_estoque == NULL){
-        printf("erro de abertura\n");
+        printf("Erro de abertura\n");
     }else{
         while (fread(&prod[k], sizeof(prod[k]), 1, arquivo_estoque) == 1) {
             prod = (produto*) realloc(prod, (k + 2) * sizeof(produto));

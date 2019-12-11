@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "estoque.h"
+#include "estruturas-auxiliares-st.h"
 
 typedef struct{
 	int conta;
@@ -9,10 +9,9 @@ typedef struct{
 }count;
 
 void mais_pedidos(){
-	produto *prod;
-	acai *acai_p;
+	produto_st *prod;
+	acai_st *acai_p;
 	count *contador;
-    int quantidade_de_pedidos = 0;
 	
 	FILE *arquivo_estoque;
 	FILE *arquivo_venda;
@@ -22,31 +21,26 @@ void mais_pedidos(){
 	int l=0;
 	
 	contador = (count *)malloc((1)*sizeof(count));
-	prod = (produto*)malloc((1)*sizeof(produto));
-	acai_p = (acai*)malloc((1)*sizeof(acai));
+	prod = (produto_st*)malloc((1)*sizeof(produto_st));
+	acai_p = (acai_st*)malloc((1)*sizeof(acai_st));
 	
 	arquivo_estoque = fopen("estoque.txt", "rb");
 	arquivo_venda = fopen("venda.txt", "rb");
 	arquivo_estatistica = fopen("estatistica.txt", "ab");
 
-    printf("Digite o data de hoje\n");
-    scanf("%d %d %d", &contador[quantidade_de_pedidos].data_estatistica.dia,
-          &contador[quantidade_de_pedidos].data_estatistica.mes,
-          &contador[quantidade_de_pedidos].data_estatistica.ano);
-	
 	if(arquivo_estoque == NULL){
-		printf("ERRO!");
+		printf("ERRO!\n");
 	}else{
 		while(fread(&prod[l], sizeof(prod[l]), 1, arquivo_estoque) == 1){
-			prod = (produto*) realloc(prod,(l+2) * sizeof(produto));
+			prod = (produto_st*) realloc(prod,(l+2) * sizeof(produto_st));
 			l++;
 		}
 		fclose(arquivo_estoque);
 		if(arquivo_venda == NULL){
-		printf("Nenhuma venda realizada");
+		printf("Nenhuma venda realizada\n");
 		}else{
 			while(fread(&acai_p[k], sizeof(acai_p[k]), 1, arquivo_venda) == 1){
-				acai_p = (acai*) realloc(acai_p,(k+2) *  sizeof(acai));
+				acai_p = (acai_st*) realloc(acai_p,(k+2) *  sizeof(acai_st));
 				k++;
 			}
 			fclose(arquivo_venda);
@@ -71,9 +65,8 @@ void mais_pedidos(){
 			}
 			fclose(arquivo_estatistica);
 			for(i=0;i<k;i++){
-				printf("ID: %d | Produto: %s | Quantidade de vezes pedido: %d", i, prod[i].nome_produto, contador[i].conta);
+				printf("ID: %d | Produto: %s | Quantidade de vezes pedido: %d\n", i, prod[i].nome_produto, contador[i].conta);
 			}
 		}
-		quantidade_de_pedidos++;
 	}
 }
