@@ -1,7 +1,6 @@
 //
 // Created by jjuni on 11/12/2019.
 //
-
 typedef struct {
     int dia;
     int mes;
@@ -21,22 +20,10 @@ typedef struct {
 }data_estoque_fx;
 
 typedef struct{
-    char nome_produto[30];
-    float preco_produto;
-    float quantidade_produto;
-}produto_fx;
-
-typedef struct{
     data_estoque_fx dataEstoque_venda;
     float quantidade_acai_trezentos, quantidade_acai_quinhentos;
     float valor_venda;
 }venda_fx;
-
-typedef struct{
-    int acompanhamento_um;
-    int acompanhamento_dois;
-    int acompanhamento_tres;
-}acompanhamentos_fx;
 
 typedef struct{
     data_estoque_fx dataEstoque_compra;

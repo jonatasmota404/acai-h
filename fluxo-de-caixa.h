@@ -3,7 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include "estruturas-fluxo-de-caixa.h"
+#include "estruturas-auxiliares-fx.h"
 
 float ler_valor_despesa(int ler_mes_ou_dia,int dia, int mes, int ano){
     FILE *arquivo_despesa;

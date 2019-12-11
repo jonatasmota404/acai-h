@@ -42,8 +42,6 @@ void vender();
 void exibir_estoque();
 
 //variáveis globais
-float preco_acai_trezentos = 8;
-float preco_acai_quinhentos = 13;
 int adicoes_estoque=0;
 
 void cadastra_produto(){
